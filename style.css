@@ -8,3 +8,36 @@
 .hero{min-height:180px;display:flex;align-items:center}.hero-copy{padding:28px 42px}.hero h1{margin:0}.hero-art{height:100%}@media(max-width:650px){.hero{min-height:150px}.hero-copy{padding:24px}.hero-art{height:100%;width:70%;opacity:.6;mask-image:linear-gradient(90deg,transparent,#000 45%)}.hero h1{font-size:30px}}@media print{.hero{min-height:0}.hero-copy{padding:0}}
 
 .day-tab[data-weekday='土'] strong{color:#2464ad}.day-tab[data-weekday='日'] strong{color:#b93b3b}.day-tab[data-weekday='土'][aria-pressed='true'] strong{color:#add8ff}.day-tab[data-weekday='日'][aria-pressed='true'] strong{color:#ffc6c6}
+
+/* High-contrast, monochrome notebook styling. */
+:root{--paper:#fafafa;--ink:#111;--green:#222;--muted:#595959;--line:#e3e3e3;--accent:#333;--white:#fff}
+body{color:#111;background:#fafafa}
+h1,.day-intro h2{font-family:inherit;font-weight:700;letter-spacing:.02em}
+.hero{background:#f3f3f3;border:1px solid var(--line);border-radius:18px}
+.hero-art{filter:grayscale(1);opacity:.25}
+.brand{font-weight:700}.connection:before{background:#666}
+.day-tab{background:#fff;border-radius:10px;color:#333}
+.day-tab span{font-size:11px}.day-tab strong{font-weight:700}
+.day-tab[aria-pressed=true]{background:#222;border-color:#222;color:#fff}
+.day-number{color:#333;font-size:13px;font-weight:600;letter-spacing:0}
+.day-intro h2{font-size:25px;color:#111}
+.day-intro p{font-size:14px;color:#555}
+.day-warning{background:#f0f0f0;color:#333;border-radius:10px;font-size:13px}
+.timeline{border-left:0;padding-left:0;margin-left:0}
+.event{border-radius:16px;margin-bottom:14px;background:#fff}
+.event:before{display:none}.event.fixed{border-left:3px solid #333}
+.event summary{padding:20px}.event h3{font-size:17px;font-weight:700;line-height:1.6;color:#111}
+.event-head>div{min-width:0}.event-icon{font-size:24px}
+.time,.fixed .time{font-size:13px;color:#555;margin-bottom:7px;letter-spacing:0}
+.event-head:after{color:#555}.tag,.tag.warm{background:#f0f0f0;color:#3c3c3c;border-radius:12px;font-size:11px;padding:2px 9px}
+.event-body{margin:0 20px;padding:16px 0 20px;font-size:15px;color:#333}
+.detail-label{font-size:12px;color:#555}.map-link{font-size:14px;color:#222}
+.choice{background:#f4f4f4;border-radius:10px;padding:12px}
+.side-card,.offline-card{background:#fff;border-radius:16px}
+.side-card h2{font-size:18px;font-weight:700;color:#111}.side-card p,.notes{font-size:14px}
+.important-note strong{font-size:15px}.important-note span{font-size:12px;letter-spacing:0}
+.button{border-radius:10px;font-size:14px;font-weight:600}.help,.help p{font-size:13px}
+textarea{font:14px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","Yu Gothic",sans-serif;border-radius:10px;color:#111}
+.text-button{font-size:13px}.muted{color:#595959}
+@media(max-width:650px){.hero-art{opacity:.2}.hero h1{font-size:30px}.event summary{padding:18px}.event h3{font-size:17px}.event-body{margin:0 18px}.day-tab strong{font-size:18px}.day-intro h2{font-size:24px}}
+@media print{.event summary{padding:8px 12px}.event h3{font-size:13px}.event-body{font-size:11px;padding:5px 0}.hero{border:0;background:none}.day-intro p,.day-number,.time{font-size:11px}}
