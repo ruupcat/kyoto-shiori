@@ -33,7 +33,7 @@ function dayHTML(day, printing = false) {
   return `<div class="${printing?'print-day':''}"><div class="day-intro"><span class="day-number">${escapeHTML(day.chapter)} · ${Number(day.date.slice(5,7))}月${Number(day.date.slice(8))}日（${escapeHTML(day.weekday)}）</span><h2>${escapeHTML(day.title)}</h2><p>${escapeHTML(day.subtitle)}</p></div>${day.warning?`<div class="day-warning">要確認 · ${escapeHTML(day.warning)}</div>`:''}<div class="timeline">${day.events.map(event=>eventHTML(event, printing)).join('')}</div></div>`;
 }
 function render() {
-  $('#days').innerHTML = trip.days.map(day => `<button class="day-tab" type="button" aria-pressed="${day.date === activeDay}" data-date="${day.date}" aria-label="11月${Number(day.date.slice(8))}日 ${escapeHTML(day.label)}"><span>11月</span><strong>${Number(day.date.slice(8))}日<small style="font-size:10px"> ${day.weekday}</small></strong><span>${escapeHTML(day.label)}</span></button>`).join('');
+  $('#days').innerHTML = trip.days.map(day => `<button class="day-tab" data-weekday="${escapeHTML(day.weekday)}" type="button" aria-pressed="${day.date === activeDay}" data-date="${day.date}" aria-label="11月${Number(day.date.slice(8))}日 ${escapeHTML(day.label)}"><span>11月</span><strong>${Number(day.date.slice(8))}日<small style="font-size:10px"> ${day.weekday}</small></strong><span>${escapeHTML(day.label)}</span></button>`).join('');
   $('#day-content').innerHTML = dayHTML(trip.days.find(day=>day.date===activeDay));
 }
 $('#days').addEventListener('click', event => { const button = event.target.closest('[data-date]'); if(button) { activeDay = button.dataset.date; render(); } });
