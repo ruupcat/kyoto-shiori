@@ -36,10 +36,10 @@ async function main() {
   windowListeners.afterprint();
   assert.match(element('#day-content').innerHTML,/帰着日/);
   const handlers={},cacheEntries=new Map();
-  const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url)};
-  const swContext=vm.createContext({URL,Response,
+  const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
+  const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v8'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v9'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
@@ -50,6 +50,14 @@ async function main() {
   assert.equal((await response).file,'trip.json');
   handlers.fetch({request:{url:'https://example.test/kyoto-shiori/unknown',method:'GET',mode:'navigate'},respondWith:p=>response=p});
   assert.equal((await response).file,'index.html');
+  swContext.fetch=async()=>new Response('最新の日本語画面',{status:200});
+  const request={url:'https://example.test/kyoto-shiori/',method:'GET',mode:'navigate'};
+  handlers.fetch({request,respondWith:p=>response=p});
+  assert.equal(await (await response).text(),'最新の日本語画面');
+  swContext.fetch=async()=>{throw new Error('offline');};
+  handlers.fetch({request,respondWith:p=>response=p});
+  assert.equal(await (await response).text(),'最新の日本語画面');
+  console.log('PASS: online fetch replaces old cache; subsequent offline navigation uses the updated cache.');
   console.log('PASS: embedded itinerary matches JSON, first render without fetch, 5 days, fixed event, day navigation, local memo/choice save, all-day print, 9 cache assets, subpath offline JSON and navigation fallback.');
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});

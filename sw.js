@@ -1,5 +1,5 @@
 'use strict';
-const CACHE = 'autumn-shiori-shell-v8';
+const CACHE = 'autumn-shiori-shell-v9';
 const ASSETS = ['./','./index.html','./style.css','./app.js','./trip.json','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png'];
 const urls = ASSETS.map(path=>new URL(path,self.registration.scope).href);
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(urls)).then(()=>self.skipWaiting())));
@@ -11,9 +11,22 @@ self.addEventListener('fetch', event => {
   event.respondWith((async()=>{
     const cache = await caches.open(CACHE);
     const cached = await cache.match(event.request,{ignoreSearch:true});
-    if(cached) return cached;
-    try { return await fetch(event.request); }
-    catch { if(event.request.mode === 'navigate') return (await cache.match(new URL('./index.html',self.registration.scope).href)) || Response.error(); return Response.error(); }
+    const controller = new AbortController();
+    const timeout = setTimeout(()=>controller.abort(),2500);
+    try {
+      const response = await fetch(event.request,{cache:'no-store',signal:controller.signal});
+      if(response.ok) {
+        if(urls.includes(url.href)) await cache.put(event.request,response.clone());
+        return response;
+      }
+      return cached || response;
+    }
+    catch {
+      if(cached) return cached;
+      if(event.request.mode === 'navigate') return (await cache.match(new URL('./index.html',self.registration.scope).href)) || Response.error();
+      return Response.error();
+    }
+    finally { clearTimeout(timeout); }
   })());
 });
 self.addEventListener('message', event => {

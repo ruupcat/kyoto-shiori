@@ -2,6 +2,13 @@
 const $ = selector => document.querySelector(selector);
 const KEY = 'autumn-shiori-v1';
 let trip, activeDay = '2026-11-15', registration;
+if ('serviceWorker' in navigator) {
+  const alreadyControlled = Boolean(navigator.serviceWorker.controller);
+  let refreshed = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if(alreadyControlled && !refreshed) { refreshed = true; window.location.reload(); }
+  });
+}
 let saved = {version:1, memo:'', choices:{}};
 const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 function validateSaved(value) {
@@ -84,7 +91,7 @@ async function initialize() {
   }
   if('serviceWorker' in navigator && location.protocol !== 'file:') {
     try {
-      await navigator.serviceWorker.register('./sw.js', {scope:'./'});
+      await navigator.serviceWorker.register('./sw.js', {scope:'./',updateViaCache:'none'});
       registration = await navigator.serviceWorker.ready;
       await checkCache();
     } catch { $('#cache-status').textContent = 'オフライン保存ができませんでした。通信がある状態で再読み込みしてください。'; }
