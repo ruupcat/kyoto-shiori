@@ -41,3 +41,4 @@ textarea{font:14px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","Yu Gothic",s
 .text-button{font-size:13px}.muted{color:#595959}
 @media(max-width:650px){.hero-art{opacity:.2}.hero h1{font-size:30px}.event summary{padding:18px}.event h3{font-size:17px}.event-body{margin:0 18px}.day-tab strong{font-size:18px}.day-intro h2{font-size:24px}}
 @media print{.event summary{padding:8px 12px}.event h3{font-size:13px}.event-body{font-size:11px;padding:5px 0}.hero{border:0;background:none}.day-intro p,.day-number,.time{font-size:11px}}
+.days{overflow-x:auto;padding-bottom:5px}.day-tab{flex:1 0 62px}.day-tab span:last-child{white-space:nowrap}@media(max-width:650px){.day-tab{flex:0 0 66px}}
