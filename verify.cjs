@@ -52,7 +52,7 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v49'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v50'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
