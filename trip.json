@@ -83,7 +83,9 @@
           "note": "6:50に登り始め、山頂往復・下山まで2時間半を見込み、9:20終了の想定。下山後は東寺方面へ移動し、朝食を食べてから東寺を観光。",
           "icon": "⛩️",
           "time": "6:50–9:20（2時間半想定）",
-          "durationMinutes": 150
+          "durationMinutes": 150,
+          "guideImage": "./assets/fushimi-inari-map.png",
+          "guideImageAlt": "伏見稲荷大社の境内案内図（提供画像）"
         },
         {
           "id": "breakfast",

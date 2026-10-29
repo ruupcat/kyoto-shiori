@@ -31,6 +31,7 @@ async function main() {
   assert.ok(!fs.readFileSync('index.html','utf8').includes('id="memo"'));
   assert.match(element('#day-content').innerHTML,/13:00–16:00/);
   assert.match(element('#day-content').innerHTML,/旅荘茶谷/);
+  assert.match(element('#day-content').innerHTML,/assets\/fushimi-inari-map\.png/);
   for(const day of trip.days){
     element('#days').click({target:{closest:()=>({dataset:{date:day.date}})}});
     assert.match(element('#day-content').innerHTML,new RegExp(day.title.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
@@ -51,15 +52,17 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v25'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v26'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
   let status;handlers.message({data:{type:'CHECK_CACHE'},ports:[{postMessage:value=>status=value}],waitUntil:p=>pending=p});await pending;
-  assert.equal(status.ready,true);assert.equal(status.count,9);
+  assert.equal(status.ready,true);assert.equal(status.count,10);
   let response;
   handlers.fetch({request:{url:'https://example.test/kyoto-shiori/trip.json',method:'GET'},respondWith:p=>response=p});
   assert.equal((await response).file,'trip.json');
+  handlers.fetch({request:{url:'https://example.test/kyoto-shiori/assets/fushimi-inari-map.png',method:'GET'},respondWith:p=>response=p});
+  assert.equal((await response).file,'assets/fushimi-inari-map.png');
   handlers.fetch({request:{url:'https://example.test/kyoto-shiori/unknown',method:'GET',mode:'navigate'},respondWith:p=>response=p});
   assert.equal((await response).file,'index.html');
   swContext.fetch=async()=>new Response('最新の日本語画面',{status:200});
