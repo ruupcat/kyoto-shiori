@@ -103,3 +103,11 @@ async function initialize() {
   } else { $('#cache-status').textContent = 'オフライン保存にはHTTPS公開が必要です。PCの確認にはlocalhostを使います。'; }
 }
 initialize();
+
+const backToTop = $('#back-to-top');
+function updateBackToTop() { backToTop.hidden = window.scrollY < 300; }
+window.addEventListener('scroll', updateBackToTop, {passive:true});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({top:0, behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+});
+updateBackToTop();

@@ -22,11 +22,17 @@ async function main() {
   const context = vm.createContext({
     document:{querySelector:selector=>selector==='#memo'?null:element(selector)}, navigator:{onLine:true}, location:{protocol:'http:'},
     localStorage:{getItem:key=>storage.get(key)||null,setItem:(key,value)=>storage.set(key,value)},
-    window:{addEventListener:(type,fn)=>windowListeners[type]=fn},
+    window:{scrollY:0,matchMedia:()=>({matches:false}),scrollTo:options=>{nodes.scrollOptions=options;},addEventListener:(type,fn)=>windowListeners[type]=fn},
     fetch:async()=>{throw new Error('Network unavailable on first render');}, console, setTimeout, clearTimeout
   });
   vm.runInContext(fs.readFileSync('app.js','utf8'),context);
   await new Promise(resolve=>setImmediate(resolve));
+  assert.equal(element('#back-to-top').hidden,true);
+  context.window.scrollY=400;windowListeners.scroll();
+  assert.equal(element('#back-to-top').hidden,false);
+  element('#back-to-top').click();assert.equal(nodes.scrollOptions.top,0);assert.equal(nodes.scrollOptions.behavior,'smooth');
+  context.window.matchMedia=()=>({matches:true});element('#back-to-top').click();assert.equal(nodes.scrollOptions.behavior,'auto');
+  context.window.scrollY=0;windowListeners.scroll();assert.equal(element('#back-to-top').hidden,true);
   assert.equal((element('#days').innerHTML.match(/class="day-tab"/g)||[]).length,6);
   assert.ok(!fs.readFileSync('index.html','utf8').includes('id="memo"'));
   assert.match(element('#day-content').innerHTML,/13:00–16:00/);
@@ -52,7 +58,7 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v61'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v62'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
