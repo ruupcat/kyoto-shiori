@@ -8,7 +8,7 @@ async function main() {
   assert.equal(trip.lodgingNights,3);
   assert.equal(trip.days.at(-1).date,'2026-11-19');
   const secondDay=trip.days.find(day=>day.date==='2026-11-16');
-  assert.deepEqual(secondDay.events.filter(event=>['kurama','kifune','hiei'].includes(event.id)).map(event=>event.id),['kurama','kifune','hiei']);
+  assert.deepEqual(secondDay.events.filter(event=>['kurama','kifune'].includes(event.id)).map(event=>event.id),['kurama','kifune']);
   assert.equal(secondDay.events.find(event=>event.id==='car-pickup').time,'18:00');
   assert.equal(trip.days.find(day=>day.date==='2026-11-18').events[0].id,'koyasan');
   assert.equal(new Set(trip.days.flatMap(day=>day.events.map(event=>event.id))).size,trip.days.flatMap(day=>day.events).length);
@@ -58,7 +58,7 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v64'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v65'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
