@@ -413,24 +413,6 @@
           "checkedAt": "2026-10-29"
         },
         {
-          "id": "takaragaike-walk",
-          "title": "バス停から宝ケ池駅へ歩く",
-          "icon": "🚶",
-          "people": [
-            "ぴぴ",
-            "じじ"
-          ],
-          "transport": "徒歩",
-          "place": "花園橋または宝ヶ池バス停 → 叡山電車・宝ケ池駅",
-          "address": "京都市左京区上高野上荒蒔町5-4（宝ケ池駅）",
-          "sourceURL": "https://eizandensha.co.jp/guide/station/takaragaike.html",
-          "sourceLabel": "宝ケ池駅の公式案内",
-          "note": "花園橋バス停から叡電・宝ケ池駅までは徒歩約5分（ユーザー提供の目安）。花園橋9:05下車なら駅に9:10頃、9:26下車なら駅に9:31頃の到着目安。宝ヶ池バス停で降りる場合の徒歩時間とは別です。バス停名は「宝ヶ池」、叡電の駅名は「宝ケ池」。",
-          "time": "バス下車後に出発",
-          "walkMinutes": 5,
-          "walkSource": "ユーザー提供（2026-10-29）"
-        },
-        {
           "id": "eizan-kurama",
           "title": "宝ケ池駅から鞍馬駅へ（叡電）",
           "icon": "🚃",
