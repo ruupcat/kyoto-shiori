@@ -486,9 +486,45 @@
             "ぴぴ",
             "じじ"
           ],
-          "note": "12:30頃に貴船到着の予定。その後、貴船神社を参拝。",
+          "note": "12:30頃に貴船到着。貴船神社に1時間滞在し、13:30頃に出発する予定。",
           "icon": "⛩️",
-          "time": "12:30頃"
+          "time": "12:30–13:30（1時間）",
+          "durationMinutes": 60
+        },
+        {
+          "id": "kifune-to-yase",
+          "title": "バス貴船→貴船口、叡電で八瀬比叡山口へ",
+          "icon": "🚌",
+          "time": "13:37／13:52／14:07発（バス候補）",
+          "people": [
+            "ぴぴ",
+            "じじ"
+          ],
+          "transport": "京都バス33 → 叡山電車",
+          "place": "貴船神社 → 貴船バス停 → 叡電貴船口駅前 → 貴船口駅 → 宝ケ池駅（乗り換え）→ 八瀬比叡山口駅",
+          "note": "13:30頃に貴船神社を出発し、貴船バス停まで徒歩約5分。京都バス33系統「叡電貴船口駅前」行きに乗る。貴船口駅では出町柳方面に乗車し、宝ケ池駅で八瀬比叡山口行きへ乗り換え。電車の標準所要時間は貴船口→宝ケ池が約19分、宝ケ池→八瀬比叡山口が約5分（待ち時間は別）。",
+          "serviceLabel": "貴船発・叡電貴船口駅前行きの候補",
+          "scheduleSource": "平日現行ダイヤ",
+          "departures": [
+            {
+              "departure": "13:37",
+              "note": "13:30に神社を出て、徒歩約5分でバス停へ向かう場合の候補。"
+            },
+            {
+              "departure": "13:52",
+              "note": "バス停までの移動に余裕を取る場合。"
+            },
+            {
+              "departure": "14:07",
+              "note": "参拝や移動が延びた場合の次の候補。"
+            }
+          ],
+          "sourceURL": "https://www.kyotobus.jp/route/timetable/schedule.html?stop_id=6292_1",
+          "sourceLabel": "貴船発・京都バス33系統の時刻表",
+          "railTimetableURL": "https://eizandensha.co.jp/information/kibuneguchi/?di=5",
+          "durationSourceURL": "https://eizandensha.co.jp/guide/station/kibuneguchi.html",
+          "walkingSourceURL": "https://kifunejinja.jp/",
+          "checkedAt": "2026-10-30"
         },
         {
           "id": "hiei",
@@ -497,7 +533,7 @@
             "ぴぴ",
             "じじ"
           ],
-          "note": "鞍馬寺・貴船神社の後に比叡山へ。訪問先の詳細、交通手段・滞在時間は未定。",
+          "note": "貴船からバスで貴船口駅へ。叡電で宝ケ池駅を経由し、八瀬比叡山口駅から比叡山へ向かう予定。山上へのケーブル・ロープウェイの接続と滞在時間はこれから決める。",
           "icon": "⛰️"
         },
         {
