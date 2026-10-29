@@ -203,7 +203,8 @@
           },
           "hours": "金堂・講堂 8:00〜17:00／観智院・宝物館 9:00〜17:00（各16:30受付終了）",
           "sourceURL": "https://toji.or.jp/admission/",
-          "sourceLabel": "東寺公式・拝観料と拝観時間"
+          "sourceLabel": "東寺公式・拝観料と拝観時間",
+          "time": "10:20"
         },
         {
           "id": "imadegawa-arrival",
