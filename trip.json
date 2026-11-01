@@ -414,11 +414,16 @@
             "ぴぴ",
             "じじ"
           ],
-          "time": "8:45発 または 9:06発（候補）",
+          "time": "8:26／8:45／9:06発（候補）",
           "status": "公式時刻表確認",
           "place": "大原バス停 → 花園橋または宝ヶ池バス停 → 徒歩で叡電・宝ケ池駅",
           "scheduleSource": "平日ダイヤ",
           "departures": [
+            {
+              "departure": "8:26",
+              "arrival": "8:47",
+              "note": "17系統・京都駅前行。宝ヶ池バス停8:47で下車、運賃370円。国際会館駅前は経由しない。"
+            },
             {
               "departure": "8:45",
               "arrival": "9:17",
@@ -434,7 +439,7 @@
           "operator": "京都バス",
           "transport": "京都バス（平日ダイヤ）",
           "sourceURL": "https://www.kyotobus.jp/route/timetable/schedule.html?stop_id=6039_1",
-          "checkedAt": "2026-10-29"
+          "checkedAt": "2026-11-02"
         },
         {
           "id": "eizan-kurama",
