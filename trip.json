@@ -595,7 +595,47 @@
               "note": "新今宮→橋本（和歌山県）。南海高野線急行・橋本行き。南海1番線発→4・5番線着。740円。"
             }
           ],
-          "sourceDescription": "ユーザー提供NAVITIME画像（2026/11/02 19:04時点、11/16検索）"
+          "sourceDescription": "ユーザー提供NAVITIME画像（2026/11/02 19:04時点、11/16検索）",
+          "sourceURL": "https://www.navitime.co.jp/diagram/depArrTimeList?date=2026-11-16&hour=13&departure=00001510&arrival=00003573&line=00000258&updown=0",
+          "sourceLabel": "貴船口→出町柳の時刻表（NAVITIME）",
+          "timetable": {
+            "label": "貴船口→出町柳（各便30分）",
+            "note": "出町柳までの時刻。橋本までの乗り継ぎは便ごとに異なる。",
+            "services": [
+              {
+                "departure": "13:07",
+                "arrival": "13:37"
+              },
+              {
+                "departure": "13:22",
+                "arrival": "13:52"
+              },
+              {
+                "departure": "13:37",
+                "arrival": "14:07"
+              },
+              {
+                "departure": "13:52",
+                "arrival": "14:22"
+              },
+              {
+                "departure": "14:07",
+                "arrival": "14:37"
+              },
+              {
+                "departure": "14:22",
+                "arrival": "14:52"
+              },
+              {
+                "departure": "14:37",
+                "arrival": "15:07"
+              },
+              {
+                "departure": "14:52",
+                "arrival": "15:22"
+              }
+            ]
+          }
         },
         {
           "id": "chikara-udon",
