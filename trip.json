@@ -532,7 +532,7 @@
           ],
           "transport": "京都バス33",
           "place": "貴船神社 → 貴船バス停 → 叡電貴船口駅前",
-          "note": "13:30頃に貴船神社を出発し、貴船バス停まで徒歩約5分。京都バス33系統「叡電貴船口駅前」行きに乗る。下車後、貴船口駅へ。",
+          "note": "神社→貴船バス停：徒歩約5分。バス乗車：約4分（余裕を見て5分）。13:30頃に神社を出発し、京都バス33系統「叡電貴船口駅前」行きに乗る。下車後、貴船口駅へ。",
           "serviceLabel": "貴船発・叡電貴船口駅前行きの候補",
           "scheduleSource": "平日現行ダイヤ",
           "departures": [
@@ -552,7 +552,9 @@
           "sourceURL": "https://www.kyotobus.jp/route/timetable/schedule.html?stop_id=6292_1",
           "sourceLabel": "貴船発・京都バス33系統の時刻表",
           "walkingSourceURL": "https://kifunejinja.jp/",
-          "checkedAt": "2026-10-30"
+          "checkedAt": "2026-10-30",
+          "durationMinutes": 4,
+          "plannedRideMinutes": 5
         },
         {
           "id": "nara-move",
