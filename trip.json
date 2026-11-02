@@ -557,46 +557,31 @@
           "plannedRideMinutes": 5
         },
         {
-          "id": "nara-move",
-          "title": "貴船口から橋本駅へ（出町柳・京橋・新今宮で乗り換え）",
+          "id": "kibuneguchi-to-demachi",
+          "title": "貴船口から出町柳へ（叡電）",
           "people": [
             "ぴぴ",
             "じじ"
           ],
-          "transport": "叡電 → 京阪 → JR → 南海",
-          "note": "京橋・新今宮経由を選択。天下茶屋より先に南海へ乗れるので、座れる可能性を優先。出町柳・新今宮は乗り換え各5分。京橋ではJR環状線「鶴橋・天王寺方面」へ。2時間46分・1,960円、17:23橋本着。",
-          "icon": "🚉",
+          "transport": "叡山電車・出町柳行き",
+          "icon": "🚃",
           "time": "14:37発",
           "departure": "14:37",
-          "arrival": "17:23",
-          "durationMinutes": 166,
-          "fare": "1,960円",
-          "transferCount": 3,
-          "place": "貴船口 → 出町柳 → 京橋 → 新今宮 → 橋本（和歌山県）",
-          "serviceLabel": "保存した乗車ルート",
-          "scheduleSource": "NAVITIME・提供画像",
+          "arrival": "15:07",
+          "durationMinutes": 30,
+          "fare": "470円",
+          "transferCount": 0,
+          "place": "貴船口 → 出町柳（宝ケ池は直通・乗換不要）",
+          "note": "14:37貴船口発→15:07出町柳着。30分・470円。前方車両に乗る。出町柳では15:12発の京阪特急へ、乗り換え5分。",
           "departures": [
             {
               "departure": "14:37",
               "arrival": "15:07",
               "note": "貴船口→出町柳。叡山電鉄・出町柳行き、前方車両。470円。宝ケ池は直通・乗換不要。出町柳で乗り換え5分。"
-            },
-            {
-              "departure": "15:12",
-              "arrival": "16:00",
-              "note": "出町柳→京橋。京阪本線特急・淀屋橋行き、後方車両。1・2番線発→3・4番線着。自由席、550円。京橋で乗り換え12分。"
-            },
-            {
-              "departure": "16:12",
-              "arrival": "16:29",
-              "note": "京橋→新今宮。JR大阪環状線・鶴橋、天王寺方面、前方車両。4番線発→JR3・4番線着。200円。新今宮でJRから南海へ乗り換え5分。"
-            },
-            {
-              "departure": "16:34",
-              "arrival": "17:23",
-              "note": "新今宮→橋本（和歌山県）。南海高野線急行・橋本行き。南海1番線発→4・5番線着。740円。"
             }
           ],
+          "serviceLabel": "保存した乗車ルート",
+          "scheduleSource": "NAVITIME・提供画像",
           "sourceDescription": "ユーザー提供NAVITIME画像（2026/11/02 19:04時点、11/16検索）",
           "sourceURL": "https://www.navitime.co.jp/diagram/depArrTimeList?date=2026-11-16&hour=13&departure=00001510&arrival=00003573&line=00000258&updown=0",
           "sourceLabel": "貴船口→出町柳の時刻表（NAVITIME）",
@@ -638,6 +623,44 @@
               }
             ]
           }
+        },
+        {
+          "id": "nara-move",
+          "title": "出町柳から橋本駅へ（京橋・新今宮で乗り換え）",
+          "people": [
+            "ぴぴ",
+            "じじ"
+          ],
+          "transport": "京阪 → JR → 南海",
+          "note": "京橋・新今宮経由を選択。天下茶屋より先に南海へ乗れるので、座れる可能性を優先。京橋ではJR環状線「鶴橋・天王寺方面」へ。新今宮は乗り換え5分。出町柳から2時間11分・1,490円、17:23橋本着。",
+          "icon": "🚉",
+          "time": "15:12発",
+          "departure": "15:12",
+          "arrival": "17:23",
+          "durationMinutes": 131,
+          "fare": "1,490円",
+          "transferCount": 2,
+          "place": "出町柳 → 京橋 → 新今宮 → 橋本（和歌山県）",
+          "serviceLabel": "保存した乗車ルート",
+          "scheduleSource": "NAVITIME・提供画像",
+          "departures": [
+            {
+              "departure": "15:12",
+              "arrival": "16:00",
+              "note": "出町柳→京橋。京阪本線特急・淀屋橋行き、後方車両。1・2番線発→3・4番線着。自由席、550円。京橋で乗り換え12分。"
+            },
+            {
+              "departure": "16:12",
+              "arrival": "16:29",
+              "note": "京橋→新今宮。JR大阪環状線・鶴橋、天王寺方面、前方車両。4番線発→JR3・4番線着。200円。新今宮でJRから南海へ乗り換え5分。"
+            },
+            {
+              "departure": "16:34",
+              "arrival": "17:23",
+              "note": "新今宮→橋本（和歌山県）。南海高野線急行・橋本行き。南海1番線発→4・5番線着。740円。"
+            }
+          ],
+          "sourceDescription": "ユーザー提供NAVITIME画像（2026/11/02 19:04時点、11/16検索）"
         },
         {
           "id": "chikara-udon",
