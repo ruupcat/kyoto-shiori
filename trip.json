@@ -664,9 +664,9 @@
             "じじ"
           ],
           "transport": "京阪 → JR → 南海",
-          "note": "京橋・新今宮経由を選択。天下茶屋より先に南海へ乗れるので、座れる可能性を優先。京橋ではJR環状線「鶴橋・天王寺方面」へ。新今宮は乗り換え5分。出町柳から2時間11分・1,490円、17:23橋本着。",
+          "note": "京橋・新今宮経由。南海に天下茶屋より先に乗れるルート。早い5便と15:12発を、1候補ずつまとめています。",
           "icon": "🚉",
-          "time": "15:12発（14:37発に乗れた場合の候補）",
+          "time": "14:01／14:13／14:25／14:48／15:00発（候補）",
           "departure": "15:12",
           "arrival": "17:23",
           "durationMinutes": 131,
@@ -675,24 +675,233 @@
           "place": "出町柳 → 京橋 → 新今宮 → 橋本（和歌山県）",
           "serviceLabel": "保存した乗車ルート",
           "scheduleSource": "NAVITIME・提供画像",
-          "departures": [
+          "sourceDescription": "ユーザー提供NAVITIME画像（2026/11/02 19:04時点、11/16検索）",
+          "routeOptions": [
+            {
+              "departure": "14:01",
+              "arrival": "16:22",
+              "fare": "1,490円",
+              "preferred": false,
+              "durationMinutes": 141,
+              "legs": [
+                {
+                  "from": "出町柳",
+                  "to": "京橋",
+                  "departure": "14:01",
+                  "arrival": "14:48",
+                  "line": "京阪特急・淀屋橋行き（自由席）",
+                  "position": "後方車両",
+                  "transferMinutes": 9
+                },
+                {
+                  "from": "京橋",
+                  "to": "新今宮",
+                  "departure": "14:57",
+                  "arrival": "15:14",
+                  "line": "JR環状線・鶴橋、天王寺方面",
+                  "position": "前方車両",
+                  "transferMinutes": 20
+                },
+                {
+                  "from": "新今宮",
+                  "to": "橋本",
+                  "departure": "15:34",
+                  "arrival": "16:22",
+                  "line": "南海高野線急行・橋本行き",
+                  "position": "南海1番線"
+                }
+              ],
+              "source": "Yahoo!路線情報の11/16各区間検索から組み合わせ",
+              "checkedAt": "2026-11-03"
+            },
+            {
+              "departure": "14:13",
+              "arrival": "16:22",
+              "fare": "1,490円",
+              "preferred": false,
+              "durationMinutes": 129,
+              "legs": [
+                {
+                  "from": "出町柳",
+                  "to": "京橋",
+                  "departure": "14:13",
+                  "arrival": "15:00",
+                  "line": "京阪特急・淀屋橋行き（自由席）",
+                  "position": "後方車両",
+                  "transferMinutes": 12
+                },
+                {
+                  "from": "京橋",
+                  "to": "新今宮",
+                  "departure": "15:12",
+                  "arrival": "15:29",
+                  "line": "JR環状線・鶴橋、天王寺方面",
+                  "position": "前方車両",
+                  "transferMinutes": 5
+                },
+                {
+                  "from": "新今宮",
+                  "to": "橋本",
+                  "departure": "15:34",
+                  "arrival": "16:22",
+                  "line": "南海高野線急行・橋本行き",
+                  "position": "南海1番線"
+                }
+              ],
+              "source": "Yahoo!路線情報の11/16各区間検索から組み合わせ",
+              "checkedAt": "2026-11-03"
+            },
+            {
+              "departure": "14:25",
+              "arrival": "16:53",
+              "fare": "1,490円",
+              "preferred": false,
+              "durationMinutes": 148,
+              "legs": [
+                {
+                  "from": "出町柳",
+                  "to": "京橋",
+                  "departure": "14:25",
+                  "arrival": "15:12",
+                  "line": "京阪特急・淀屋橋行き（自由席）",
+                  "position": "後方車両",
+                  "transferMinutes": 15
+                },
+                {
+                  "from": "京橋",
+                  "to": "新今宮",
+                  "departure": "15:27",
+                  "arrival": "15:44",
+                  "line": "JR環状線・鶴橋、天王寺方面",
+                  "position": "前方車両",
+                  "transferMinutes": 20
+                },
+                {
+                  "from": "新今宮",
+                  "to": "橋本",
+                  "departure": "16:04",
+                  "arrival": "16:53",
+                  "line": "南海高野線急行・橋本行き",
+                  "position": "南海1番線"
+                }
+              ],
+              "source": "Yahoo!路線情報の11/16各区間検索から組み合わせ",
+              "checkedAt": "2026-11-03"
+            },
+            {
+              "departure": "14:48",
+              "arrival": "16:53",
+              "fare": "1,490円",
+              "preferred": false,
+              "durationMinutes": 125,
+              "legs": [
+                {
+                  "from": "出町柳",
+                  "to": "京橋",
+                  "departure": "14:48",
+                  "arrival": "15:36",
+                  "line": "京阪特急・淀屋橋行き（自由席）",
+                  "position": "後方車両",
+                  "transferMinutes": 6
+                },
+                {
+                  "from": "京橋",
+                  "to": "新今宮",
+                  "departure": "15:42",
+                  "arrival": "15:59",
+                  "line": "JR環状線・鶴橋、天王寺方面",
+                  "position": "前方車両",
+                  "transferMinutes": 5
+                },
+                {
+                  "from": "新今宮",
+                  "to": "橋本",
+                  "departure": "16:04",
+                  "arrival": "16:53",
+                  "line": "南海高野線急行・橋本行き",
+                  "position": "南海1番線"
+                }
+              ],
+              "source": "Yahoo!路線情報の11/16各区間検索から組み合わせ",
+              "checkedAt": "2026-11-03"
+            },
+            {
+              "departure": "15:00",
+              "arrival": "17:23",
+              "fare": "1,490円",
+              "preferred": false,
+              "durationMinutes": 143,
+              "legs": [
+                {
+                  "from": "出町柳",
+                  "to": "京橋",
+                  "departure": "15:00",
+                  "arrival": "15:48",
+                  "line": "京阪特急・淀屋橋行き（自由席）",
+                  "position": "後方車両",
+                  "transferMinutes": 9
+                },
+                {
+                  "from": "京橋",
+                  "to": "新今宮",
+                  "departure": "15:57",
+                  "arrival": "16:14",
+                  "line": "JR環状線・鶴橋、天王寺方面",
+                  "position": "前方車両",
+                  "transferMinutes": 20
+                },
+                {
+                  "from": "新今宮",
+                  "to": "橋本",
+                  "departure": "16:34",
+                  "arrival": "17:23",
+                  "line": "南海高野線急行・橋本行き",
+                  "position": "南海1番線"
+                }
+              ],
+              "source": "Yahoo!路線情報の11/16各区間検索から組み合わせ",
+              "checkedAt": "2026-11-03"
+            },
             {
               "departure": "15:12",
-              "arrival": "16:00",
-              "note": "出町柳→京橋。京阪本線特急・淀屋橋行き、後方車両。1・2番線発→3・4番線着。自由席、550円。京橋で乗り換え12分。"
-            },
-            {
-              "departure": "16:12",
-              "arrival": "16:29",
-              "note": "京橋→新今宮。JR大阪環状線・鶴橋、天王寺方面、前方車両。4番線発→JR3・4番線着。200円。新今宮でJRから南海へ乗り換え5分。"
-            },
-            {
-              "departure": "16:34",
               "arrival": "17:23",
-              "note": "新今宮→橋本（和歌山県）。南海高野線急行・橋本行き。南海1番線発→4・5番線着。740円。"
+              "fare": "1,490円",
+              "preferred": true,
+              "durationMinutes": 131,
+              "legs": [
+                {
+                  "from": "出町柳",
+                  "to": "京橋",
+                  "departure": "15:12",
+                  "arrival": "16:00",
+                  "line": "京阪特急・淀屋橋行き（自由席）",
+                  "position": "後方車両",
+                  "transferMinutes": 12
+                },
+                {
+                  "from": "京橋",
+                  "to": "新今宮",
+                  "departure": "16:12",
+                  "arrival": "16:29",
+                  "line": "JR環状線・鶴橋、天王寺方面",
+                  "position": "前方車両",
+                  "transferMinutes": 5
+                },
+                {
+                  "from": "新今宮",
+                  "to": "橋本",
+                  "departure": "16:34",
+                  "arrival": "17:23",
+                  "line": "南海高野線急行・橋本行き",
+                  "position": "南海1番線"
+                }
+              ],
+              "source": "ユーザー提供NAVITIME画像",
+              "checkedAt": "2026-11-03"
             }
           ],
-          "sourceDescription": "ユーザー提供NAVITIME画像（2026/11/02 19:04時点、11/16検索）"
+          "sourceURL": "https://transit.yahoo.co.jp/search/result?from=%E5%87%BA%E7%94%BA%E6%9F%B3&to=%E6%A9%8B%E6%9C%AC%28%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%29&via=%E6%96%B0%E4%BB%8A%E5%AE%AE&viacode=25977&y=2026&m=11&d=16&hh=14&m1=0&m2=0&type=1",
+          "sourceLabel": "出町柳→橋本の乗換検索（11/16）"
         },
         {
           "id": "chikara-udon",

@@ -43,6 +43,13 @@ async function main() {
     assert.match(element('#day-content').innerHTML,new RegExp(day.title.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
   }
   element('#days').click({target:{closest:()=>({dataset:{date:'2026-11-16'}})}});
+  assert.equal((element('#day-content').innerHTML.match(/class="departure-option route-option"/g)||[]).length,6);
+  for(const option of secondDay.events.find(e=>e.id==='nara-move').routeOptions){
+    assert.equal(option.legs.length,3);
+    const toMinutes=s=>s.split(':').reduce((h,m)=>Number(h)*60+Number(m));
+    for(let i=0;i<2;i++)assert.equal(toMinutes(option.legs[i+1].departure)-toMinutes(option.legs[i].arrival),option.legs[i].transferMinutes);
+    assert.ok(option.legs.slice(0,2).every(leg=>leg.transferMinutes>=5));
+  }
   assert.match(element('#day-content').innerHTML,/assets\/kurama-map\.png/);
   assert.match(element('#day-content').innerHTML,/kuramadera\.or\.jp\/annai\.html/);
   assert.match(element('#day-content').innerHTML,/href="tel:09073641862"/);
@@ -60,7 +67,7 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v86'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v87'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
