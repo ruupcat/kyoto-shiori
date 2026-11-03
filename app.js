@@ -80,7 +80,7 @@ async function checkCache() {
       channel.port1.onmessage = message => { clearTimeout(timeout); resolve(message.data); };
       worker.postMessage({type:'CHECK_CACHE'}, [channel.port2]);
     });
-    status.textContent = result.ready ? `保存完了 · 全${trip?.days.length || 6}日間とアプリをこの端末に保存済み。機内モードで再起動も試してください。` : '保存が未完了です。通信がある状態で再読み込みしてください。';
+    status.textContent = result.ready ? `保存完了 · 全${trip?.days.length || 5}日間とアプリをこの端末に保存済み。機内モードで再起動も試してください。` : '保存が未完了です。通信がある状態で再読み込みしてください。';
   } catch { status.textContent = '保存を確認できません。HTTPSの公開URL（PCではlocalhost）で開き、再読み込み後にお試しください。'; }
   finally { button.disabled = false; }
 }
