@@ -494,7 +494,11 @@
           "note": "本堂までは約30分。見学しながら歩き、貴船神社側への下山も含めて約2時間を見込む。",
           "icon": "🏯",
           "time": "10:00",
-          "durationMinutes": 120
+          "durationMinutes": 120,
+          "guideImage": "./assets/kurama-map.png",
+          "guideImageAlt": "鞍馬山案内図",
+          "sourceURL": "https://kuramadera.or.jp/annai.html",
+          "sourceLabel": "鞍馬寺公式・山内案内"
         },
         {
           "id": "mountain",

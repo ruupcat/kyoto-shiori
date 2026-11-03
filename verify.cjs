@@ -43,6 +43,8 @@ async function main() {
     assert.match(element('#day-content').innerHTML,new RegExp(day.title.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
   }
   element('#days').click({target:{closest:()=>({dataset:{date:'2026-11-16'}})}});
+  assert.match(element('#day-content').innerHTML,/assets\/kurama-map\.png/);
+  assert.match(element('#day-content').innerHTML,/kuramadera\.or\.jp\/annai\.html/);
   assert.match(element('#day-content').innerHTML,/href="tel:09073641862"/);
   assert.match(element('#day-content').innerHTML,/チェックイン 22:00まで/);
   assert.match(element('#day-content').innerHTML,/大淀町下渕172/);
@@ -58,12 +60,12 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v84'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v85'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
   let status;handlers.message({data:{type:'CHECK_CACHE'},ports:[{postMessage:value=>status=value}],waitUntil:p=>pending=p});await pending;
-  assert.equal(status.ready,true);assert.equal(status.count,10);
+  assert.equal(status.ready,true);assert.equal(status.count,11);
   let response;
   handlers.fetch({request:{url:'https://example.test/kyoto-shiori/trip.json',method:'GET'},respondWith:p=>response=p});
   assert.equal((await response).file,'trip.json');
