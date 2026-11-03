@@ -989,11 +989,12 @@
             "ぴぴ",
             "じじ"
           ],
-          "note": "11月17日朝に出発し、天河神社へ。チェックアウト時刻は未定。",
+          "note": "チェックアウト期限は9:00。8:00にチェックアウトし、天河神社へ向かう予定。",
           "icon": "🧳",
           "place": "松月館",
           "address": "〒638-0821 奈良県吉野郡大淀町下渕172",
-          "map": "https://maps.app.goo.gl/2SGq1QxHGeBiq94x6"
+          "map": "https://maps.app.goo.gl/2SGq1QxHGeBiq94x6",
+          "time": "8:00（予定）"
         },
         {
           "id": "tenkawa-shrine",
