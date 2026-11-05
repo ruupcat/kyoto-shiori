@@ -943,21 +943,6 @@
           "note": "松月館は素泊まりで翌朝の朝食なし。翌朝に食べるものを買っておく。"
         },
         {
-          "id": "shogetsukan-drive",
-          "title": "カーシェアで松月館へ",
-          "people": [
-            "ぴぴ",
-            "じじ"
-          ],
-          "transport": "カーシェア",
-          "note": "タイムズから松月館まで車で約30分。18:00出発、18:30チェックイン予定。",
-          "icon": "🚗",
-          "time": "18:00出発予定",
-          "durationMinutes": 30,
-          "departure": "18:00",
-          "arrival": "18:30"
-        },
-        {
           "id": "shogetsukan-stay",
           "title": "松月館にチェックイン・宿泊",
           "people": [
