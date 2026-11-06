@@ -143,7 +143,11 @@
           "durationMinutes": 120,
           "guideImage": "./assets/fushimi-inari-map.png",
           "guideImageAlt": "伏見稲荷大社の境内案内図（提供画像）",
-          "bufferMinutes": 10
+          "bufferMinutes": 10,
+          "saying": {
+            "label": "一ノ峰で言うセリフ",
+            "text": "空狐、天狐、私が出来る事を全うします、私をお遣いください"
+          }
         },
         {
           "id": "inari-to-toji",
