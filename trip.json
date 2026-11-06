@@ -1137,5 +1137,207 @@
   ],
   "startDate": "2026-11-14",
   "endDate": "2026-11-19",
-  "lodgingNights": 3
+  "lodgingNights": 3,
+  "checklist": {
+    "lodgingAmenities": [
+      {
+        "id": "chatani",
+        "name": "旅荘茶谷",
+        "night": 1,
+        "date": "2026-11-15",
+        "rows": [
+          [
+            {
+              "name": "ハンドタオル",
+              "available": true
+            },
+            {
+              "name": "ボディソープ",
+              "available": true
+            }
+          ],
+          [
+            {
+              "name": "ドライヤー",
+              "available": true
+            },
+            {
+              "name": "温水洗浄トイレ",
+              "available": true
+            }
+          ],
+          [
+            {
+              "name": "歯ブラシ・歯磨き粉",
+              "available": true
+            },
+            {
+              "name": "石けん",
+              "available": true
+            }
+          ],
+          [
+            {
+              "name": "羽毛布団",
+              "available": false
+            },
+            {
+              "name": "くし・ブラシ",
+              "available": false
+            }
+          ],
+          [
+            {
+              "name": "バスタオル",
+              "available": false
+            },
+            {
+              "name": "浴衣",
+              "available": true
+            }
+          ],
+          [
+            {
+              "name": "髭剃り",
+              "available": false
+            },
+            null
+          ],
+          [
+            {
+              "name": "シャンプー（リンスインシャンプー含む）",
+              "available": true
+            },
+            {
+              "name": "パジャマ",
+              "available": false
+            }
+          ],
+          [
+            {
+              "name": "シャワーキャップ",
+              "available": false
+            },
+            null
+          ],
+          [
+            {
+              "name": "リンス",
+              "available": true
+            },
+            {
+              "name": "バスローブ",
+              "available": false
+            }
+          ],
+          [
+            {
+              "name": "綿棒",
+              "available": true
+            },
+            null
+          ]
+        ]
+      },
+      {
+        "id": "shogetsukan",
+        "name": "松月館",
+        "night": 2,
+        "date": "2026-11-16",
+        "rows": [
+          [
+            {
+              "name": "ハンドタオル",
+              "available": true
+            },
+            {
+              "name": "ボディソープ",
+              "available": true
+            }
+          ],
+          [
+            {
+              "name": "ドライヤー",
+              "available": true
+            },
+            {
+              "name": "温水洗浄トイレ",
+              "available": false
+            }
+          ],
+          [
+            {
+              "name": "歯ブラシ・歯磨き粉",
+              "available": true
+            },
+            {
+              "name": "石けん",
+              "available": true
+            }
+          ],
+          [
+            {
+              "name": "羽毛布団",
+              "available": false
+            },
+            {
+              "name": "くし・ブラシ",
+              "available": false
+            }
+          ],
+          [
+            {
+              "name": "バスタオル",
+              "available": true
+            },
+            {
+              "name": "浴衣",
+              "available": true
+            }
+          ],
+          [
+            {
+              "name": "髭剃り",
+              "available": false
+            },
+            null
+          ],
+          [
+            {
+              "name": "シャンプー（リンスインシャンプー含む）",
+              "available": true
+            },
+            {
+              "name": "パジャマ",
+              "available": false
+            }
+          ],
+          [
+            {
+              "name": "シャワーキャップ",
+              "available": false
+            },
+            null
+          ],
+          [
+            {
+              "name": "リンス",
+              "available": true
+            },
+            {
+              "name": "バスローブ",
+              "available": false
+            }
+          ],
+          [
+            {
+              "name": "綿棒",
+              "available": false
+            },
+            null
+          ]
+        ]
+      }
+    ]
+  }
 }
