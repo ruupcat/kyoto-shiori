@@ -1414,6 +1414,105 @@
         ],
         "note": "シャンプー・ボディソープは浴場に用意。お部屋の「月のしずく」の小ボトルは飲用可。大きなボトルは「金水」（地下水）で、ポットのお湯用などに使用できる。"
       }
+    ],
+    "packingGroups": [
+      {
+        "label": "衣類",
+        "items": [
+          {
+            "id": "pack-underwear",
+            "name": "下着　3枚"
+          },
+          {
+            "id": "pack-socks",
+            "name": "靴下　3枚",
+            "note": "寝る時に履くものもあるとよいかも"
+          }
+        ]
+      },
+      {
+        "label": "歯・髪のお手入れ",
+        "items": [
+          {
+            "id": "pack-toothbrush",
+            "name": "歯ブラシ",
+            "note": "全ての宿にあるが、初日にバスを降りた後に磨く用"
+          },
+          {
+            "id": "pack-hairbrush",
+            "name": "髪用のブラシ",
+            "note": "宿にない"
+          }
+        ]
+      },
+      {
+        "label": "タオル・寝間着",
+        "items": [
+          {
+            "id": "pack-bath-towel",
+            "name": "バスタオル",
+            "note": "1泊目の茶谷にない。ハンドタオルはあり"
+          },
+          {
+            "id": "pack-pajamas",
+            "name": "パジャマ",
+            "note": "浴衣は全ての宿にあり"
+          }
+        ]
+      },
+      {
+        "label": "充電用品",
+        "items": [
+          {
+            "id": "pack-power-bank",
+            "name": "モバイルバッテリー"
+          },
+          {
+            "id": "pack-charger",
+            "name": "スマホ充電器"
+          }
+        ]
+      },
+      {
+        "label": "雨具・袋",
+        "items": [
+          {
+            "id": "pack-umbrella",
+            "name": "折り畳み傘"
+          },
+          {
+            "id": "pack-bags",
+            "name": "ビニール袋"
+          }
+        ]
+      },
+      {
+        "label": "バスの睡眠用品",
+        "items": [
+          {
+            "id": "pack-bus-sleep",
+            "name": "バスで寝る時用のグッズ",
+            "note": "必要であれば"
+          }
+        ]
+      },
+      {
+        "label": "チケット・本",
+        "items": [
+          {
+            "id": "pack-koyasan-ticket",
+            "name": "高野山のチケット"
+          },
+          {
+            "id": "pack-yunosato-ticket",
+            "name": "湯の里のチケット"
+          },
+          {
+            "id": "pack-books",
+            "name": "加藤さんと保江さんの本"
+          }
+        ]
+      }
     ]
   }
 }

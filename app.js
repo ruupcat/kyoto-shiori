@@ -9,13 +9,16 @@ if ('serviceWorker' in navigator) {
     if(alreadyControlled && !refreshed) { refreshed = true; window.location.reload(); }
   });
 }
-let saved = {version:1, memo:'', choices:{}};
+let saved = {version:1, memo:'', choices:{}, packing:{}};
 const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 function validateSaved(value) {
   if (!value || value.version !== 1 || typeof value.memo !== 'string' || value.memo.length > 100000 || !value.choices || typeof value.choices !== 'object' || Array.isArray(value.choices)) throw new Error('形式が違います');
   const choices = {};
   for (const [key, choice] of Object.entries(value.choices)) if(key === 'breakfast' && ['a','b'].includes(choice)) choices[key] = choice;
-  return {version:1, memo:value.memo, choices};
+  const packing = {};
+  if(value.packing && (typeof value.packing !== 'object' || Array.isArray(value.packing))) throw new Error('形式が違います');
+  for(const [id, checked] of Object.entries(value.packing || {})) if(/^pack-[a-z0-9-]{1,40}$/.test(id) && typeof checked === 'boolean') packing[id] = checked;
+  return {version:1, memo:value.memo, choices, packing};
 }
 try { const raw = localStorage.getItem(KEY); if(raw) saved = validateSaved(JSON.parse(raw)); }
 catch { $('#save-status').textContent = '保存内容を読み込めませんでした。バックアップから復元できます。'; }
@@ -41,16 +44,17 @@ function eventHTML(event, printing = false) {
 function dayHTML(day, printing = false) {
   return `<div class="${printing?'print-day':''}"><div class="day-intro"><span class="day-number">${escapeHTML(day.chapter)} · ${Number(day.date.slice(5,7))}月${Number(day.date.slice(8))}日（${escapeHTML(day.weekday)}）</span><h2>${escapeHTML(day.title)}</h2><p>${escapeHTML(day.subtitle)}</p></div><div class="timeline">${day.events.map(event=>eventHTML(event, printing)).join('')}</div></div>`;
 }
-function checklistHTML() {
+function checklistHTML(printing = false) {
   const e = escapeHTML;
-  return '<section class="checklist-page"><div class="day-intro"><h2>チェックリスト</h2></div>' + (trip.checklist?.lodgingAmenities || []).map(stay => '<section class="amenity-card"><h3>' + e(stay.night) + '泊目 · ' + e(stay.name) + '</h3><p class="amenity-legend">○ あり　× なし</p><table class="amenity-table"><caption>' + e(stay.name) + 'のアメニティ</caption><thead><tr><th scope="col">有無</th><th scope="col">アメニティ</th><th scope="col">有無</th><th scope="col">アメニティ</th></tr></thead><tbody>' + stay.rows.map(row => '<tr>' + row.map(item => item ? '<td class="amenity-mark" aria-label="' + (item.available ? 'あり' : 'なし') + '">' + (item.available ? '○' : '×') + '</td><td>' + e(item.name) + '</td>' : '<td></td><td></td>').join('') + '</tr>').join('') + '</tbody></table>' + (stay.note ? '<p class="amenity-note">' + e(stay.note) + '</p>' : '') + '</section>').join('') + '</section>';
+  const packing = '<section class="packing-card"><h3>持ってくもの</h3>' + (trip.checklist?.packingGroups || []).map(group => '<div class="packing-group" role="group" aria-label="' + e(group.label) + '">' + group.items.map(item => '<label class="packing-item"><input type="checkbox" name="packing" value="' + e(item.id) + '" ' + (saved.packing[item.id] ? 'checked ' : '') + (printing ? 'disabled ' : '') + '><span><span class="packing-name">' + e(item.name) + '</span>' + (item.note ? '<small>' + e(item.note) + '</small>' : '') + '</span></label>').join('') + '</div>').join('') + '</section>';
+  return '<section class="checklist-page"><div class="day-intro"><h2>チェックリスト</h2></div>' + packing + (trip.checklist?.lodgingAmenities || []).map(stay => '<section class="amenity-card"><h3>' + e(stay.night) + '泊目 · ' + e(stay.name) + '</h3><table class="amenity-table"><caption>' + e(stay.name) + 'のアメニティ</caption><thead><tr><th scope="col">有無</th><th scope="col">アメニティ</th><th scope="col">有無</th><th scope="col">アメニティ</th></tr></thead><tbody>' + stay.rows.map(row => '<tr>' + row.map(item => item ? '<td class="amenity-mark" aria-label="' + (item.available ? 'あり' : 'なし') + '">' + (item.available ? '○' : '×') + '</td><td>' + e(item.name) + '</td>' : '<td></td><td></td>').join('') + '</tr>').join('') + '</tbody></table>' + (stay.note ? '<p class="amenity-note">' + e(stay.note) + '</p>' : '') + '</section>').join('') + '</section>';
 }
 function render() {
   $('#days').innerHTML = `<button class="day-tab checklist-tab" type="button" data-date="checklist" aria-pressed="${activeDay === 'checklist'}">チェック<br>リスト</button>` + trip.days.map(day => `<button class="day-tab" data-weekday="${escapeHTML(day.weekday)}" type="button" aria-pressed="${day.date === activeDay}" data-date="${day.date}" aria-label="${Number(day.date.slice(5,7))}月${Number(day.date.slice(8))}日 ${escapeHTML(day.label)}"><span>${Number(day.date.slice(5,7))}月</span><strong>${Number(day.date.slice(8))}日<small style="font-size:10px"> ${day.weekday}</small></strong><span>${escapeHTML(day.label)}</span></button>`).join('');
   $('#day-content').innerHTML = activeDay === 'checklist' ? checklistHTML() : dayHTML(trip.days.find(day=>day.date===activeDay));
 }
 $('#days').addEventListener('click', event => { const button = event.target.closest('[data-date]'); if(button) { activeDay = button.dataset.date; render(); } });
-$('#day-content').addEventListener('change', event => { if(event.target.name === 'breakfast') { saved.choices.breakfast = event.target.value; persist(); } });
+$('#day-content').addEventListener('change', event => { if(event.target.name === 'packing' && /^pack-[a-z0-9-]{1,40}$/.test(event.target.value)) { saved.packing[event.target.value] = event.target.checked; persist(); } else if(event.target.name === 'breakfast') { saved.choices.breakfast = event.target.value; persist(); } });
 $('#export').addEventListener('click', () => {
   const blob = new Blob([JSON.stringify({...saved, exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});
   const url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = '秋の旅しおり-backup.json'; document.body.append(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),10000);
@@ -66,7 +70,7 @@ $('#import-file').addEventListener('change', async event => {
   } catch { alert('復元できませんでした。このしおりから保存したJSONファイルを選んでください。'); }
   finally { event.target.value = ''; }
 });
-function preparePrint() { if(trip) $('#day-content').innerHTML = checklistHTML() + trip.days.map(day=>dayHTML(day,true)).join(''); }
+function preparePrint() { if(trip) $('#day-content').innerHTML = checklistHTML(true) + trip.days.map(day=>dayHTML(day,true)).join(''); }
 window.addEventListener('beforeprint', preparePrint);
 window.addEventListener('afterprint', ()=>{if(trip)render();});
 $('#print').addEventListener('click', ()=>{ if(trip) { preparePrint(); window.print(); } });

@@ -39,6 +39,13 @@ async function main() {
   assert.match(element('#day-content').innerHTML,/旅荘茶谷/);
   assert.match(element('#day-content').innerHTML,/assets\/fushimi-inari-map\.png/);
   element('#days').click({target:{closest:()=>({dataset:{date:'checklist'}})}});
+  assert.equal((element('#day-content').innerHTML.match(/name="packing"/g)||[]).length,14);
+  assert.ok(element('#day-content').innerHTML.indexOf('持ってくもの') < element('#day-content').innerHTML.indexOf('旅荘茶谷'));
+  assert.ok(!element('#day-content').innerHTML.includes('amenity-legend'));
+  element('#day-content').change({target:{name:'packing',value:'pack-underwear',checked:true}});
+  vm.runInContext('saved = validateSaved(JSON.parse(localStorage.getItem(KEY))); render();',context);
+  assert.match(element('#day-content').innerHTML,/value="pack-underwear" checked/);
+  assert.equal(JSON.parse(storage.get('autumn-shiori-v1')).memo,'以前保存したメモ');
   assert.match(element('#day-content').innerHTML,/旅荘茶谷のアメニティ/);
   assert.match(element('#day-content').innerHTML,/松月館のアメニティ/);
   assert.equal((element('#day-content').innerHTML.match(/class="amenity-card"/g)||[]).length,3);
@@ -72,7 +79,7 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v103'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v104'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
