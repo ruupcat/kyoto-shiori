@@ -58,3 +58,5 @@ textarea{font:14px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","Yu Gothic",s
 .packing-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:24px}.packing-card h3{margin:0 0 14px;font-size:18px}.packing-group+.packing-group{margin-top:20px;padding-top:16px;border-top:1px solid #eee}.packing-item{display:flex;align-items:flex-start;gap:12px;padding:9px 0;cursor:pointer;line-height:1.6}.packing-item input{flex:0 0 auto;width:20px;height:20px;margin:3px 0 0;accent-color:#c44732}.packing-name{font-weight:600;color:#111}.packing-item small{display:block;font-size:12px;color:#595959;line-height:1.7;margin-top:3px}.packing-item input:checked+span .packing-name{text-decoration:line-through;color:#777}@media(max-width:650px){.packing-card{padding:18px}.packing-item{font-size:15px}}@media print{.packing-group{break-inside:avoid}.packing-card{border:0;padding:0}.packing-item{padding:4px 0}}
 
 .amenity-card h3{color:#2464ad}
+
+.day-tab:not(.checklist-tab){min-width:82px}.day-tab strong{white-space:nowrap}
