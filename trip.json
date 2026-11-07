@@ -1230,6 +1230,18 @@
           "sourceLabel": "なんばパークス公式・店舗情報"
         },
         {
+          "id": "namba-okonomiyaki",
+          "title": "夕食の候補：お好み焼き 志SIN",
+          "icon": "🍽️",
+          "time": "19時頃",
+          "status": "候補",
+          "place": "鉄板焼き・お好み焼き 志SIN",
+          "address": "〒556-0016 大阪府大阪市浪速区元町3-10-20",
+          "phone": "06-6648-0809",
+          "note": "お好み焼きの夕食候補。かつ喜とどちらかを選ぶ。21:30の夜行バス集合に間に合うように移動。",
+          "map": "https://maps.app.goo.gl/RuVRfhzUVCXyjZX5A"
+        },
+        {
           "id": "namba-cafe",
           "title": "ソファでゆっくりしたいなら → #702 CAFE&DINER（なんばパークス7F）",
           "icon": "☕",
