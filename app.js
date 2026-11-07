@@ -44,8 +44,11 @@ function eventHTML(event, printing = false) {
   return `<details class="event ${event.fixed?'fixed':''}" ${printing?'open':''}><summary><div class="event-head"><div><span class="time">${e(event.time || '時刻未定')}${event.fixed?' · 時刻固定':''}</span><h3 class="event-title"><span class="event-icon" aria-hidden="true">${e(event.icon || '📍')}</span><span>${e(event.title)}</span></h3><div class="tags">${event.status?`<span class="tag warm">${e(event.status)}</span>`:''}${event.transport?`<span class="tag">${e(event.transport)}</span>`:''}</div></div></div></summary><div class="event-body">${event.place?`<span class="detail-label">場所</span><p>${e(event.place)}</p>`:''}${event.address?`<span class="detail-label">住所 · オフラインでも確認できます</span><p>${e(event.address)}</p>`:''}${saying}${contacts}<p>${e(event.note)}</p>${choices}${admission}${stops}${venues}${departures}${routeOptions}${timetable}${guideImage}${sourceLink}${maps}</div></details>`;
 }
 function dayHTML(day, printing = false) {
-  const nextDay = trip.days[trip.days.findIndex(candidate=>candidate.date===day.date) + 1];
-  const nextButton = !printing && nextDay ? '<div class="day-navigation"><button type="button" class="next-day-button" data-next-day="' + escapeHTML(nextDay.date) + '" aria-label="翌日を見る：' + Number(nextDay.date.slice(5,7)) + '月' + Number(nextDay.date.slice(8)) + '日 ' + escapeHTML(nextDay.label) + '">翌日を見る →</button></div>' : '';
+  const dayIndex = trip.days.findIndex(candidate=>candidate.date===day.date);
+  const nextDay = trip.days[dayIndex + 1], prevDay = trip.days[dayIndex - 1];
+  const previous = !printing && prevDay ? '<button type="button" class="prev-day-button" data-prev-day="' + escapeHTML(prevDay.date) + '" aria-label="前日を見る：' + Number(prevDay.date.slice(5,7)) + '月' + Number(prevDay.date.slice(8)) + '日 ' + escapeHTML(prevDay.label) + '">← 前日を見る</button>' : '';
+  const next = !printing && nextDay ? '<button type="button" class="next-day-button" data-next-day="' + escapeHTML(nextDay.date) + '" aria-label="翌日を見る：' + Number(nextDay.date.slice(5,7)) + '月' + Number(nextDay.date.slice(8)) + '日 ' + escapeHTML(nextDay.label) + '">翌日を見る →</button>' : '';
+  const nextButton = previous || next ? '<div class="day-navigation">' + previous + next + '</div>' : '';
   return `<div class="${printing?'print-day':''}"><div class="day-intro"><span class="day-number">${escapeHTML(day.chapter)} · ${Number(day.date.slice(5,7))}月${Number(day.date.slice(8))}日（${escapeHTML(day.weekday)}）</span><h2>${escapeHTML(day.title)}</h2><p>${escapeHTML(day.subtitle)}</p></div><div class="timeline">${day.events.map(event=>eventHTML(event, printing)).join('')}</div>${nextButton}</div>`;
 }
 function checklistHTML(printing = false) {
@@ -59,8 +62,9 @@ function render() {
 }
 $('#days').addEventListener('click', event => { const button = event.target.closest('[data-date]'); if(button) { activeDay = button.dataset.date; render(); } });
 $('#day-content').addEventListener('click', event => {
-  const button = event.target.closest('[data-next-day]');
-  if(button && trip.days.some(day=>day.date===button.dataset.nextDay)) { activeDay = button.dataset.nextDay; render(); window.scrollTo({top:0,behavior:'auto'}); }
+  const button = event.target.closest('[data-next-day], [data-prev-day]');
+  const targetDay = button && (button.dataset.nextDay || button.dataset.prevDay);
+  if(targetDay && trip.days.some(day=>day.date===targetDay)) { activeDay = targetDay; render(); window.scrollTo({top:0,behavior:'auto'}); }
 });
 $('#day-content').addEventListener('change', event => { if(event.target.name === 'packing' && /^pack-[a-z0-9-]{1,40}$/.test(event.target.value)) { saved.packing[event.target.value] = event.target.checked; persist(); } else if(event.target.name === 'breakfast') { saved.choices.breakfast = event.target.value; persist(); } });
 $('#export').addEventListener('click', () => {

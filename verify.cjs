@@ -35,6 +35,12 @@ async function main() {
   context.window.scrollY=0;windowListeners.scroll();assert.equal(element('#back-to-top').hidden,true);
   assert.equal((element('#days').innerHTML.match(/class="day-tab(?: checklist-tab)?"/g)||[]).length,6);
   assert.ok(!fs.readFileSync('index.html','utf8').includes('id="memo"'));
+  assert.match(element('#day-content').innerHTML,/data-prev-day="2026-11-14"/);
+  element('#day-content').click({target:{closest:()=>({dataset:{prevDay:'2026-11-14'}})}});
+  assert.match(element('#day-content').innerHTML,/大宮駅西口のバス乗り場に集合/);
+  assert.ok(!element('#day-content').innerHTML.includes('data-prev-day='));
+  assert.equal(nodes.scrollOptions.top,0);
+  element('#days').click({target:{closest:()=>({dataset:{date:'2026-11-15'}})}});
   assert.match(element('#day-content').innerHTML,/data-next-day="2026-11-16"/);
   element('#day-content').click({target:{closest:()=>({dataset:{nextDay:'2026-11-16'}})}});
   assert.match(element('#day-content').innerHTML,/鞍馬寺を参拝/);
@@ -74,6 +80,7 @@ async function main() {
   assert.match(element('#day-content').innerHTML,/大淀町下渕172/);
   element('#days').click({target:{closest:()=>({dataset:{date:'2026-11-18'}})}});
   assert.ok(!element('#day-content').innerHTML.includes('data-next-day='));
+  assert.match(element('#day-content').innerHTML,/data-prev-day="2026-11-17"/);
   element('#day-content').change({target:{name:'breakfast',value:'b'}});
   assert.equal(JSON.parse(storage.get('autumn-shiori-v1')).memo,'以前保存したメモ');
   assert.equal(JSON.parse(storage.get('autumn-shiori-v1')).choices.breakfast,'b');
@@ -85,7 +92,7 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v121'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v122'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
