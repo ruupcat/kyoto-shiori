@@ -1229,7 +1229,8 @@
           "fixed": true,
           "place": "さくら高速バス 難波〈パークス通り沿い〉",
           "phone": "050-3851-0264",
-          "contactInfo": true
+          "contactInfo": true,
+          "map": "https://maps.app.goo.gl/a3Xg2hv56FcmL1d37"
         }
       ]
     }
