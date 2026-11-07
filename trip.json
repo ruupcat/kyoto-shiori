@@ -1215,6 +1215,21 @@
           "sourceLabel": "橋本→難波の乗換検索（11/18）"
         },
         {
+          "id": "namba-dinner",
+          "title": "難波駅で食事（候補：極みとんかつ かつ喜）",
+          "icon": "🍽️",
+          "time": "難波駅に到着後",
+          "status": "候補",
+          "place": "極みとんかつ かつ喜 なんばパークス店（6階）",
+          "note": "難波駅に着いたら夕食の候補。21:30の夜行バス集合に間に合うように食事。",
+          "map": "https://maps.app.goo.gl/KhSNUPWDcWg7tdx4A",
+          "address": "〒556-0011 大阪府大阪市浪速区難波中2-10-70 なんばパークス6階",
+          "phone": "06-6537-7480",
+          "hours": "11:00〜22:00（ラストオーダー21:30）",
+          "sourceURL": "https://nambaparks.com/shopresearch/170",
+          "sourceLabel": "なんばパークス公式・店舗情報"
+        },
+        {
           "id": "return-bus",
           "title": "難波から夜行バスで大宮へ",
           "time": "21:30集合 → 21:40発",
