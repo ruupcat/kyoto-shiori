@@ -1216,7 +1216,7 @@
         },
         {
           "id": "namba-dinner",
-          "title": "難波駅で食事（候補：極みとんかつ かつ喜）",
+          "title": "難波駅で食事（候補：極みとんかつ かつ喜・なんばパークス6F）",
           "icon": "🍽️",
           "time": "難波駅に到着後",
           "status": "候補",
@@ -1228,6 +1228,20 @@
           "hours": "11:00〜22:00（ラストオーダー21:30）",
           "sourceURL": "https://nambaparks.com/shopresearch/170",
           "sourceLabel": "なんばパークス公式・店舗情報"
+        },
+        {
+          "id": "namba-cafe",
+          "title": "ソファでゆっくりしたいなら → #702 CAFE&DINER（なんばパークス7F）",
+          "icon": "☕",
+          "time": "難波での休憩・食事の候補",
+          "status": "候補",
+          "place": "#702 CAFE&DINER なんばパークス店（7階）",
+          "address": "〒556-0011 大阪府大阪市浪速区難波中2-10-70 なんばパークス7階",
+          "phone": "06-6643-9233",
+          "hours": "11:00〜23:00（料理L.O.22:00／飲み物L.O.22:30）",
+          "note": "ソファ席のあるカフェ＆ダイナー。ゆっくり過ごしたい時の候補。17時以降はお通し代330円の案内あり。21:30の夜行バス集合に間に合うように移動。",
+          "sourceURL": "https://www.dd-holdings.jp/shops/702/nanba_parks",
+          "sourceLabel": "店舗公式・営業案内"
         },
         {
           "id": "return-bus",
