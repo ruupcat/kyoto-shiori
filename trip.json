@@ -484,7 +484,7 @@
           "id": "demachi-locker-plan",
           "title": "B.出町柳プラン（ロッカー）",
           "icon": "🧳",
-          "time": "8:26／8:45発（京都駅前行きの候補）",
+          "time": "8:26／8:45／9:26発（京都駅前行きの候補）",
           "place": "大原 → 出町柳駅前 → コインロッカー → 叡電で鞍馬",
           "note": "17・特17系統の京都駅前行きで、出町柳駅前まで乗る。駅のロッカーに荷物を預けてから、叡電の鞍馬行きへ。19系統の国際会館駅前行きは出町柳へ行かない。帰りは出町柳で荷物を回収して、京阪に乗り換える。回収する場合は、乗り換え5分の便にこだわらず余裕を取る。 図の料金・個数は掲載時の情報。",
           "stops": [
@@ -502,7 +502,26 @@
           "sourceURL": "https://coin-locker.net/demachiyanagi/",
           "sourceLabel": "出町柳のロッカー位置・料金を見る",
           "guideImage": "./assets/demachiyanagi-lockers.png",
-          "guideImageAlt": "出町柳駅のコインロッカー・荷物預かり所の位置図（coin-locker.net）"
+          "guideImageAlt": "出町柳駅のコインロッカー・荷物預かり所の位置図（coin-locker.net）",
+          "serviceLabel": "大原発 → 出町柳駅前着",
+          "scheduleSource": "11月16日適用・京都バス公式平日ダイヤ",
+          "departures": [
+            {
+              "departure": "8:26",
+              "arrival": "9:01",
+              "note": "17系統・京都駅前行き。490円。"
+            },
+            {
+              "departure": "8:45",
+              "arrival": "9:31",
+              "note": "特17系統・京都駅前行き（国際会館経由）。490円。"
+            },
+            {
+              "departure": "9:26",
+              "arrival": "10:01",
+              "note": "17系統・京都駅前行き。8時台を逃した場合の次の便。490円。"
+            }
+          ]
         },
         {
           "id": "eizan-kurama",
