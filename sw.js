@@ -1,6 +1,6 @@
 'use strict';
-const CACHE = 'autumn-shiori-shell-v139';
-const ASSETS = ['./','./index.html','./style.css','./app.js','./trip.json','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./assets/fushimi-inari-map.png','./assets/kurama-map.png','./assets/demachiyanagi-lockers.png'];
+const CACHE = 'autumn-shiori-shell-v140';
+const ASSETS = ['./','./index.html','./style.css','./app.js','./trip.json','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./assets/fushimi-inari-map.png','./assets/kurama-map.png','./assets/demachiyanagi-lockers.png','./assets/outfit-rain.png','./assets/outfit-mountain.png'];
 const urls = ASSETS.map(path=>new URL(path,self.registration.scope).href);
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(urls)).then(()=>self.skipWaiting())));
 self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('autumn-shiori-shell-') && key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
