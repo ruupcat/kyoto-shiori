@@ -33,7 +33,7 @@ async function main() {
   element('#back-to-top').click();assert.equal(nodes.scrollOptions.top,0);assert.equal(nodes.scrollOptions.behavior,'smooth');
   context.window.matchMedia=()=>({matches:true});element('#back-to-top').click();assert.equal(nodes.scrollOptions.behavior,'auto');
   context.window.scrollY=0;windowListeners.scroll();assert.equal(element('#back-to-top').hidden,true);
-  assert.equal((element('#days').innerHTML.match(/class="day-tab(?: checklist-tab)?"/g)||[]).length,6);
+  assert.equal((element('#days').innerHTML.match(/class="day-tab(?: checklist-tab)?"/g)||[]).length,7);
   assert.ok(!fs.readFileSync('index.html','utf8').includes('id="memo"'));
   assert.match(element('#day-content').innerHTML,/data-prev-day="2026-11-14"/);
   element('#day-content').click({target:{closest:()=>({dataset:{prevDay:'2026-11-14'}})}});
@@ -92,7 +92,7 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v138'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v139'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
