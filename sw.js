@@ -1,5 +1,5 @@
 'use strict';
-const CACHE = 'autumn-shiori-shell-v144';
+const CACHE = 'autumn-shiori-shell-v145';
 const ASSETS = ['./','./index.html','./style.css','./app.js','./trip.json','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./assets/fushimi-inari-map.png','./assets/kurama-map.png','./assets/demachiyanagi-lockers.png','./assets/outfit-rain.png','./assets/outfit-mountain.png'];
 const urls = ASSETS.map(path=>new URL(path,self.registration.scope).href);
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(urls)).then(()=>self.skipWaiting())));
