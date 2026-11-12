@@ -58,7 +58,7 @@ async function main() {
   assert.match(element('#day-content').innerHTML,/value="pack-underwear" checked/);
   assert.equal(JSON.parse(storage.get('autumn-shiori-v1')).memo,'以前保存したメモ');
   assert.match(element('#day-content').innerHTML,/旅荘茶谷のアメニティ/);
-  assert.match(element('#day-content').innerHTML,/松月館のアメニティ/);
+  assert.match(element('#day-content').innerHTML,/このののアメニティ/);
   assert.equal((element('#day-content').innerHTML.match(/class="amenity-card"/g)||[]).length,3);
   assert.ok(element('#days').innerHTML.indexOf('data-date="checklist"') < element('#days').innerHTML.indexOf('data-date="2026-11-14"'));
   for(const day of trip.days){
@@ -75,9 +75,9 @@ async function main() {
   }
   assert.match(element('#day-content').innerHTML,/assets\/kurama-map\.png/);
   assert.match(element('#day-content').innerHTML,/kuramadera\.or\.jp\/annai\.html/);
-  assert.match(element('#day-content').innerHTML,/href="tel:09073641862"/);
-  assert.match(element('#day-content').innerHTML,/チェックイン 22:00まで/);
-  assert.match(element('#day-content').innerHTML,/大淀町下渕172/);
+  assert.match(element('#day-content').innerHTML,/href="tel:0736327747"/);
+  assert.match(element('#day-content').innerHTML,/チェックアウト 10:00/);
+  assert.match(element('#day-content').innerHTML,/橋本市神野々895/);
   element('#days').click({target:{closest:()=>({dataset:{date:'2026-11-18'}})}});
   assert.ok(!element('#day-content').innerHTML.includes('data-next-day='));
   assert.match(element('#day-content').innerHTML,/data-prev-day="2026-11-17"/);
@@ -92,7 +92,7 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v155'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v156'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
