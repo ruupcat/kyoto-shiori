@@ -76,7 +76,7 @@ async function main() {
   assert.match(element('#day-content').innerHTML,/assets\/kurama-map\.png/);
   assert.match(element('#day-content').innerHTML,/kuramadera\.or\.jp\/annai\.html/);
   assert.match(element('#day-content').innerHTML,/href="tel:0736327747"/);
-  assert.match(element('#day-content').innerHTML,/チェックアウト 10:00/);
+  assert.match(element('#day-content').innerHTML,/チェックアウト規定 10:00/);
   assert.match(element('#day-content').innerHTML,/橋本市神野々895/);
   element('#days').click({target:{closest:()=>({dataset:{date:'2026-11-18'}})}});
   assert.ok(!element('#day-content').innerHTML.includes('data-next-day='));
@@ -92,7 +92,7 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v158'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v159'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
