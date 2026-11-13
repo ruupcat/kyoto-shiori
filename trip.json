@@ -1493,9 +1493,9 @@
         ]
       },
       {
-        "id": "konono-16",
+        "id": "konono",
         "name": "このの",
-        "night": 2,
+        "night": "2・3",
         "date": "2026-11-16",
         "rows": [
           [
@@ -1566,83 +1566,11 @@
             null
           ]
         ],
-        "note": "シャンプー・ボディソープは浴場に用意。お部屋の「月のしずく」の小ボトルは飲用可。大きなボトルは「金水」（地下水）で、ポットのお湯用などに使用できる。"
-      },
-      {
-        "id": "konono",
-        "name": "このの",
-        "night": 3,
-        "date": "2026-11-17",
-        "rows": [
-          [
-            {
-              "name": "浴衣",
-              "available": true
-            },
-            {
-              "name": "スリッパ",
-              "available": true
-            }
-          ],
-          [
-            {
-              "name": "バスタオル",
-              "available": true
-            },
-            {
-              "name": "ハンドタオル",
-              "available": true
-            }
-          ],
-          [
-            {
-              "name": "温水洗浄トイレ",
-              "available": true
-            },
-            {
-              "name": "冷蔵庫",
-              "available": true
-            }
-          ],
-          [
-            {
-              "name": "電気ポット",
-              "available": true
-            },
-            {
-              "name": "テレビ",
-              "available": true
-            }
-          ],
-          [
-            {
-              "name": "歯ブラシ",
-              "available": true
-            },
-            {
-              "name": "シャンプー（浴場）",
-              "available": true
-            }
-          ],
-          [
-            {
-              "name": "ボディソープ（浴場）",
-              "available": true
-            },
-            {
-              "name": "月のしずく（小ボトル）",
-              "available": true
-            }
-          ],
-          [
-            {
-              "name": "金水（大ボトル）",
-              "available": true
-            },
-            null
-          ]
-        ],
-        "note": "シャンプー・ボディソープは浴場に用意。お部屋の「月のしずく」の小ボトルは飲用可。大きなボトルは「金水」（地下水）で、ポットのお湯用などに使用できる。"
+        "note": "シャンプー・ボディソープは浴場に用意。お部屋の「月のしずく」の小ボトルは飲用可。大きなボトルは「金水」（地下水）で、ポットのお湯用などに使用できる。",
+        "dates": [
+          "2026-11-16",
+          "2026-11-17"
+        ]
       }
     ],
     "packingGroups": [
@@ -1729,6 +1657,10 @@
       {
         "label": "チケット・本",
         "items": [
+          {
+            "id": "pack-toji-ticket",
+            "name": "東寺のチケット"
+          },
           {
             "id": "pack-koyasan-ticket",
             "name": "高野山のチケット"
