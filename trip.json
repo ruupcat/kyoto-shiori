@@ -417,8 +417,8 @@
       "label": "鞍馬・このの",
       "weekday": "月",
       "chapter": "2日目",
-      "title": "京都・橋本",
-      "subtitle": "大原 → 鞍馬寺 → 貴船神社 → 橋本 → このの",
+      "title": "京都・三日市町・橋本",
+      "subtitle": "大原 → 鞍馬寺 → 貴船神社 → 三日市町で車を受け取り → このの",
       "events": [
         {
           "id": "chatani-breakfast",
@@ -486,7 +486,7 @@
           "icon": "🧳",
           "time": "8:26／8:45／9:26発（京都駅前行きの候補）",
           "place": "大原 → 出町柳駅前 → コインロッカー → 叡電で鞍馬",
-          "note": "17・特17系統の京都駅前行きで、出町柳駅前まで乗る。駅のロッカーに荷物を預けてから、叡電の鞍馬行きへ。19系統の国際会館駅前行きは出町柳へ行かない。帰りは出町柳で荷物を回収して、京阪に乗り換える。回収する場合は、乗り換え5分の便にこだわらず余裕を取る。 図の料金・個数は掲載時の情報。",
+          "note": "17・特17系統の京都駅前行きで、出町柳駅前まで乗る。駅のロッカーに荷物を預けてから、叡電の鞍馬行きへ。19系統の国際会館駅前行きは出町柳へ行かない。帰りは出町柳で荷物を回収して、京阪に乗り換える。荷物を回収する時間も見て、京阪の便を選ぶ。 図の料金・個数は掲載時の情報。",
           "stops": [
             {
               "name": "朝：出町柳で荷物を預ける",
@@ -679,19 +679,19 @@
           ],
           "transport": "叡山電車・出町柳行き",
           "icon": "🚃",
-          "time": "14:37発（候補）",
-          "departure": "14:37",
-          "arrival": "15:07",
+          "time": "14:07発（候補）",
+          "departure": "14:07",
+          "arrival": "14:37",
           "durationMinutes": 30,
           "fare": "470円",
           "transferCount": 0,
           "place": "貴船口 → 出町柳",
-          "note": "乗りたい便の候補：14:37貴船口発→15:07出町柳着。30分・470円。前方車両に乗る。この便なら出町柳で15:12発の京阪特急へ、乗り換え5分。",
+          "note": "14:07貴船口発→14:37出町柳着を候補に、14:48発の京阪特急へ。出町柳で乗り換え11分。30分・470円。前方車両に乗る。",
           "departures": [
             {
-              "departure": "14:37",
-              "arrival": "15:07",
-              "note": "貴船口→出町柳。叡山電鉄・出町柳行き、前方車両。470円。出町柳で乗り換え5分。"
+              "departure": "14:07",
+              "arrival": "14:37",
+              "note": "出町柳で14:48発の京阪特急へ乗り換え。乗り換え11分。470円。"
             }
           ],
           "serviceLabel": "保存した乗車ルート",
@@ -701,7 +701,7 @@
           "sourceLabel": "貴船口→出町柳の時刻表（NAVITIME）",
           "timetable": {
             "label": "貴船口→出町柳（各便30分）",
-            "note": "出町柳までの時刻。橋本までの乗り継ぎは便ごとに異なる。",
+            "note": "出町柳までの時刻。三日市町までの乗り継ぎは便ごとに異なる。",
             "services": [
               {
                 "departure": "13:07",
@@ -740,31 +740,31 @@
         },
         {
           "id": "nara-move",
-          "title": "出町柳から橋本駅へ（京橋・新今宮で乗り換え）",
+          "title": "出町柳から三日市町駅へ（京橋・新今宮で乗り換え）",
           "people": [
             "あやこ",
             "ひで"
           ],
           "transport": "京阪 → JR → 南海",
-          "note": "京橋・新今宮経由。南海に天下茶屋より先に乗れるルート。早い5便と15:12発を、1候補ずつまとめています。",
+          "note": "乗換駅は京橋・新今宮のまま。南海高野線は橋本より手前の三日市町で下車。14:48出町柳発→16:33三日市町着を候補に、17:00の受け取りへ。駅からステーションへ歩く。",
           "icon": "🚉",
           "time": "14:01／14:13／14:25／14:48／15:00発（候補）",
-          "departure": "15:12",
-          "arrival": "17:23",
-          "durationMinutes": 131,
-          "fare": "1,490円",
+          "departure": "14:48",
+          "arrival": "16:33",
+          "durationMinutes": 105,
+          "fare": "1,360円",
           "transferCount": 2,
-          "place": "出町柳 → 京橋 → 新今宮 → 橋本（和歌山県）",
+          "place": "出町柳 → 京橋 → 新今宮 → 三日市町",
           "serviceLabel": "保存した乗車ルート",
-          "scheduleSource": "NAVITIME・提供画像",
-          "sourceDescription": "ユーザー提供NAVITIME画像（2026/11/02 19:04時点、11/16検索）",
+          "scheduleSource": "11/16（月）・平日",
+          "sourceDescription": "既存の京阪・JR候補と、Yahoo!路線情報で確認した三日市町までの南海ダイヤを組み合わせ",
           "routeOptions": [
             {
               "departure": "14:01",
-              "arrival": "16:22",
-              "fare": "1,490円",
+              "arrival": "16:02",
+              "fare": "1,360円",
               "preferred": false,
-              "durationMinutes": 141,
+              "durationMinutes": 121,
               "legs": [
                 {
                   "from": "出町柳",
@@ -786,22 +786,22 @@
                 },
                 {
                   "from": "新今宮",
-                  "to": "橋本",
+                  "to": "三日市町",
                   "departure": "15:34",
-                  "arrival": "16:22",
+                  "arrival": "16:02",
                   "line": "南海高野線急行・橋本行き",
                   "position": "南海1番線"
                 }
               ],
-              "source": "Yahoo!路線情報の11/16各区間検索から組み合わせ",
-              "checkedAt": "2026-11-03"
+              "source": "Yahoo!路線情報・11/16検索（南海は三日市町で下車）",
+              "checkedAt": "2026-11-14"
             },
             {
               "departure": "14:13",
-              "arrival": "16:22",
-              "fare": "1,490円",
+              "arrival": "16:02",
+              "fare": "1,360円",
               "preferred": false,
-              "durationMinutes": 129,
+              "durationMinutes": 109,
               "legs": [
                 {
                   "from": "出町柳",
@@ -823,22 +823,22 @@
                 },
                 {
                   "from": "新今宮",
-                  "to": "橋本",
+                  "to": "三日市町",
                   "departure": "15:34",
-                  "arrival": "16:22",
+                  "arrival": "16:02",
                   "line": "南海高野線急行・橋本行き",
                   "position": "南海1番線"
                 }
               ],
-              "source": "Yahoo!路線情報の11/16各区間検索から組み合わせ",
-              "checkedAt": "2026-11-03"
+              "source": "Yahoo!路線情報・11/16検索（南海は三日市町で下車）",
+              "checkedAt": "2026-11-14"
             },
             {
               "departure": "14:25",
-              "arrival": "16:53",
-              "fare": "1,490円",
+              "arrival": "16:33",
+              "fare": "1,360円",
               "preferred": false,
-              "durationMinutes": 148,
+              "durationMinutes": 128,
               "legs": [
                 {
                   "from": "出町柳",
@@ -860,22 +860,22 @@
                 },
                 {
                   "from": "新今宮",
-                  "to": "橋本",
+                  "to": "三日市町",
                   "departure": "16:04",
-                  "arrival": "16:53",
+                  "arrival": "16:33",
                   "line": "南海高野線急行・橋本行き",
                   "position": "南海1番線"
                 }
               ],
-              "source": "Yahoo!路線情報の11/16各区間検索から組み合わせ",
-              "checkedAt": "2026-11-03"
+              "source": "Yahoo!路線情報・11/16検索（南海は三日市町で下車）",
+              "checkedAt": "2026-11-14"
             },
             {
               "departure": "14:48",
-              "arrival": "16:53",
-              "fare": "1,490円",
-              "preferred": false,
-              "durationMinutes": 125,
+              "arrival": "16:33",
+              "fare": "1,360円",
+              "preferred": true,
+              "durationMinutes": 105,
               "legs": [
                 {
                   "from": "出町柳",
@@ -897,22 +897,22 @@
                 },
                 {
                   "from": "新今宮",
-                  "to": "橋本",
+                  "to": "三日市町",
                   "departure": "16:04",
-                  "arrival": "16:53",
+                  "arrival": "16:33",
                   "line": "南海高野線急行・橋本行き",
                   "position": "南海1番線"
                 }
               ],
-              "source": "Yahoo!路線情報の11/16各区間検索から組み合わせ",
-              "checkedAt": "2026-11-03"
+              "source": "Yahoo!路線情報・11/16検索（南海は三日市町で下車）",
+              "checkedAt": "2026-11-14"
             },
             {
               "departure": "15:00",
-              "arrival": "17:23",
-              "fare": "1,490円",
+              "arrival": "16:51",
+              "fare": "1,360円",
               "preferred": false,
-              "durationMinutes": 143,
+              "durationMinutes": 111,
               "legs": [
                 {
                   "from": "出町柳",
@@ -930,94 +930,41 @@
                   "arrival": "16:14",
                   "line": "JR環状線・鶴橋、天王寺方面",
                   "position": "前方車両",
-                  "transferMinutes": 20
-                },
-                {
-                  "from": "新今宮",
-                  "to": "橋本",
-                  "departure": "16:34",
-                  "arrival": "17:23",
-                  "line": "南海高野線急行・橋本行き",
-                  "position": "南海1番線"
-                }
-              ],
-              "source": "Yahoo!路線情報の11/16各区間検索から組み合わせ",
-              "checkedAt": "2026-11-03"
-            },
-            {
-              "departure": "15:12",
-              "arrival": "17:23",
-              "fare": "1,490円",
-              "preferred": true,
-              "durationMinutes": 131,
-              "legs": [
-                {
-                  "from": "出町柳",
-                  "to": "京橋",
-                  "departure": "15:12",
-                  "arrival": "16:00",
-                  "line": "京阪特急・淀屋橋行き（自由席）",
-                  "position": "後方車両",
-                  "transferMinutes": 12
-                },
-                {
-                  "from": "京橋",
-                  "to": "新今宮",
-                  "departure": "16:12",
-                  "arrival": "16:29",
-                  "line": "JR環状線・鶴橋、天王寺方面",
-                  "position": "前方車両",
                   "transferMinutes": 5
                 },
                 {
                   "from": "新今宮",
-                  "to": "橋本",
-                  "departure": "16:34",
-                  "arrival": "17:23",
-                  "line": "南海高野線急行・橋本行き",
+                  "to": "三日市町",
+                  "departure": "16:19",
+                  "arrival": "16:51",
+                  "line": "南海高野線区間急行・林間田園都市行き",
                   "position": "南海1番線"
                 }
               ],
-              "source": "ユーザー提供NAVITIME画像",
-              "checkedAt": "2026-11-03"
+              "source": "Yahoo!路線情報・11/16検索（南海は三日市町で下車）",
+              "checkedAt": "2026-11-14"
             }
           ],
-          "sourceURL": "https://transit.yahoo.co.jp/search/result?from=%E5%87%BA%E7%94%BA%E6%9F%B3&to=%E6%A9%8B%E6%9C%AC%28%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%29&via=%E6%96%B0%E4%BB%8A%E5%AE%AE&viacode=25977&y=2026&m=11&d=16&hh=14&m1=0&m2=0&type=1",
-          "sourceLabel": "出町柳→橋本の乗換検索（11/16）"
-        },
-        {
-          "id": "chikara-udon",
-          "title": "力うどんで食事",
-          "icon": "🍜",
-          "time": "17時頃",
-          "people": [
-            "あやこ",
-            "ひで"
-          ],
-          "place": "力うどん",
-          "address": "〒648-0064 和歌山県橋本市橋本2丁目5−2",
-          "phone": "0736-32-7117",
-          "hours": "月曜日 11:30〜14:30／17:00〜20:00",
-          "note": "橋本駅に到着したら力うどんで食事。夕方の営業は17:00から。17:30のカーシェア利用開始に合わせて食事時刻を調整。",
-          "contactInfo": true,
-          "hoursSource": "ユーザー提供"
+          "sourceURL": "https://transit.yahoo.co.jp/search/result?from=%E5%87%BA%E7%94%BA%E6%9F%B3&to=%E4%B8%89%E6%97%A5%E5%B8%82%E7%94%BA&via=%E6%96%B0%E4%BB%8A%E5%AE%AE&y=2026&m=11&d=16&hh=14&m1=0&m2=0&type=1",
+          "sourceLabel": "出町柳→三日市町の乗換検索（11/16）"
         },
         {
           "id": "car-pickup",
-          "title": "タイムズのカーシェアを利用開始",
+          "title": "三日市町駅南でカーシェアを利用開始",
           "people": [
             "あやこ",
             "ひで"
           ],
           "status": "予約済み",
-          "note": "アクア（ハイブリッド）・シルバー。予約は11/16 17:30〜11/18 17:30（48時間）。時間料金プラン、安心補償サービス加入あり。追加運転者なし。",
+          "note": "ルークス・ベージュ（和泉580 わ5575）。予約は11/16 17:00〜11/18 17:00の48時間。時間料金、課金予定9,900円。安心補償サービス加入、追加運転者なし。",
           "icon": "🚗",
-          "time": "17:30",
+          "time": "17:00",
           "fixed": true,
-          "place": "タイムズカー 橋本駅南",
-          "address": "〒648-0064 和歌山県橋本市橋本2丁目5",
-          "sourceURL": "https://share.timescar.jp/view/station/detail.jsp?scd=0R67",
-          "sourceLabel": "橋本駅南のステーション情報"
+          "place": "タイムズカー 三日市町駅南",
+          "address": "〒586-0048 大阪府河内長野市三日市町117−1",
+          "sourceURL": "https://share.timescar.jp/view/station/detail.jsp?scd=NQ44",
+          "sourceLabel": "三日市町駅南のステーション情報",
+          "map": "https://maps.app.goo.gl/pBPdMu2QESctDaBL6"
         },
         {
           "id": "evening-shopping",
@@ -1242,93 +1189,109 @@
           "address": "〒648-0294 和歌山県伊都郡高野町高野山347",
           "phone": "0736-56-2015",
           "durationMinutes": 30,
-          "note": "阿闍梨さまから戒めの教えを授かり、法話を聞く。事前に購入した券で参加予定。開始は9:00／10:00／11:00／13:00／14:00／15:00／16:00（12:00の回なし）。各回10分前までに受付。橋本へ15:40頃に出発する予定に合わせて参加する回を選ぶ。",
+          "note": "阿闍梨さまから戒めの教えを授かり、法話を聞く。事前に購入した券で参加予定。開始は9:00／10:00／11:00／13:00／14:00／15:00／16:00（12:00の回なし）。各回10分前までに受付。三日市町へ14:00頃に出発する仮予定に合わせて参加する回を選ぶ。",
           "sourceURL": "https://www.koyasan.or.jp/experience/#sutras",
           "sourceLabel": "高野山公式・授戒の案内"
         },
         {
           "id": "koyasan-to-hashimoto",
-          "title": "橋本駅へむかう（通常約50分／混雑を見込んで1時間30分を確保）",
+          "title": "三日市町へむかう（車約1時間20分／混雑を見込んで2時間確保）",
           "icon": "🚗",
-          "time": "15:40頃出発 → 17:10頃到着予定",
+          "time": "14:00頃出発 → 16:00頃到着目標（仮予定）",
           "transport": "カーシェア",
-          "place": "高野山 → タイムズカー 橋本駅南",
-          "address": "〒648-0064 和歌山県橋本市橋本2丁目5",
-          "note": "高野山から通常約50分のところ、混雑を見込んで1時間30分を確保。15:40頃に高野山を出発し、17:10頃にタイムズカー 橋本駅南へ到着する目標。17:30の返却期限まで20分の余裕を取る。",
-          "departure": "15:40",
-          "arrival": "17:10",
-          "durationMinutes": 90,
-          "usualDriveMinutes": 50,
-          "sourceURL": "https://share.timescar.jp/view/station/detail.jsp?scd=0R67",
-          "sourceLabel": "橋本駅南のステーション情報"
+          "place": "高野山 → 三日市町周辺のガソリンスタンド",
+          "note": "大師教会から三日市町駅南までは地図表示で約1時間17分。混雑を見て移動に2時間を確保する仮予定。14:00頃に高野山を出発し、16:00頃から給油・水洗い洗車を行い、16:40頃にステーション到着を目標。",
+          "departure": "14:00",
+          "arrival": "16:00",
+          "durationMinutes": 120,
+          "usualDriveMinutes": 80,
+          "sourceURL": "https://share.timescar.jp/view/station/detail.jsp?scd=NQ44",
+          "sourceLabel": "三日市町駅南のステーション情報",
+          "map": "https://maps.app.goo.gl/pBPdMu2QESctDaBL6"
         },
         {
           "id": "gas-station",
-          "title": "ガソリンスタンド",
+          "title": "ガソリンスタンドで給油・水洗い洗車",
           "icon": "⛽",
-          "time": "車の返却前",
-          "note": "車内の専用給油カードを使う。利用できるガソリンスタンドと給油方法は、タイムズの案内から確認。",
+          "time": "16:00〜16:40頃（仮予定・返却前）",
+          "note": "車内の専用給油・洗車カードを使う。給油は20L以上、または燃料計の半分以上の給油量で30分の料金割引。水洗い洗車で30分、両方なら合計60分の料金割引。返却時刻の延長ではない。洗車後は予約メールのURLから利用中に報告する。",
           "sourceURL": "https://share.timescar.jp/use/gas-station.html",
           "sourceLabel": "タイムズ公式・給油とガソリンスタンドの案内"
         },
         {
           "id": "car-return",
-          "title": "カーシェアの車を返却",
+          "title": "三日市町駅南でカーシェアの車を返却",
           "people": [
             "あやこ",
             "ひで"
           ],
-          "note": "11/18 17:10頃にタイムズカー 橋本駅南へ到着し、17:30までに返却。アクア（ハイブリッド）・シルバー。",
+          "note": "ルークス・ベージュ（和泉580 わ5575）。給油・洗車を済ませ、16:40頃にステーションへ戻り、予約期限17:00までに返却。割引による返却時刻の延長はない。",
           "icon": "🚗",
-          "time": "17:30までに返却",
-          "place": "タイムズカー 橋本駅南",
-          "address": "〒648-0064 和歌山県橋本市橋本2丁目5",
-          "sourceURL": "https://share.timescar.jp/view/station/detail.jsp?scd=0R67",
-          "sourceLabel": "橋本駅南のステーション情報"
+          "time": "16:40頃到着目標 → 17:00までに返却",
+          "place": "タイムズカー 三日市町駅南",
+          "address": "〒586-0048 大阪府河内長野市三日市町117−1",
+          "sourceURL": "https://share.timescar.jp/view/station/detail.jsp?scd=NQ44",
+          "sourceLabel": "三日市町駅南のステーション情報",
+          "map": "https://maps.app.goo.gl/pBPdMu2QESctDaBL6"
         },
         {
           "id": "osaka",
-          "title": "橋本→難波（約50分・740円）",
+          "title": "三日市町→難波（約35分・610円）",
           "people": [
             "あやこ",
             "ひで"
           ],
           "transport": "南海高野線・急行／快速急行 難波行き",
-          "note": "早めに高野山を出て返却できた場合の16時台も掲載。すべて難波行き・乗換なし、740円。快速急行も同額。返却を済ませてから乗車。",
+          "note": "車の返却後、南海高野線の難波行きへ。急行・快速急行とも610円、乗換なし。早めに返却できた場合の16時台も掲載。",
           "icon": "🚃",
-          "time": "16:32／16:46／17:05／17:32／17:56発（候補）",
-          "place": "橋本駅 → なんば駅（南海線）",
+          "time": "16:31／16:39／17:05／17:15／17:24発（候補）",
+          "place": "三日市町駅 → なんば駅（南海線）",
           "serviceLabel": "保存した列車候補",
           "scheduleSource": "11/18（水）・平日",
           "departures": [
             {
-              "departure": "16:32",
-              "arrival": "17:23",
-              "note": "急行・難波行き。乗車51分、740円。橋本4番線→難波3番線。"
+              "departure": "16:31",
+              "arrival": "17:02",
+              "note": "急行・三日市町始発・難波行き。610円。三日市町2番線。車の返却完了後に乗車。"
             },
             {
-              "departure": "16:46",
-              "arrival": "17:37",
-              "note": "急行・難波行き。乗車51分、740円。橋本5番線→難波3番線。"
+              "departure": "16:39",
+              "arrival": "17:12",
+              "note": "急行・三日市町始発・難波行き。610円。三日市町2番線。車の返却完了後に乗車。"
             },
             {
               "departure": "17:05",
+              "arrival": "17:37",
+              "note": "急行・難波行き。610円。三日市町2番線。車の返却完了後に乗車。"
+            },
+            {
+              "departure": "17:15",
+              "arrival": "17:48",
+              "note": "急行・三日市町始発・難波行き。610円。三日市町2番線。車の返却完了後に乗車。"
+            },
+            {
+              "departure": "17:24",
               "arrival": "17:57",
-              "note": "急行・難波行き。乗車52分、740円。橋本4番線→難波3番線。"
+              "note": "急行・難波行き。610円。三日市町2番線。車の返却完了後に乗車。"
             },
             {
-              "departure": "17:32",
+              "departure": "17:34",
+              "arrival": "18:07",
+              "note": "急行・難波行き。610円。三日市町2番線。車の返却完了後に乗車。"
+            },
+            {
+              "departure": "17:48",
               "arrival": "18:20",
-              "note": "快速急行・難波行き。乗車48分、740円。橋本4番線→難波4番線。"
+              "note": "快速急行・難波行き。610円。三日市町2番線。車の返却完了後に乗車。"
             },
             {
-              "departure": "17:56",
-              "arrival": "18:50",
-              "note": "急行・難波行き。乗車54分、740円。橋本5番線→難波4番線。"
+              "departure": "17:57",
+              "arrival": "18:30",
+              "note": "急行・難波行き。610円。三日市町2番線。車の返却完了後に乗車。"
             }
           ],
-          "sourceURL": "https://transit.yahoo.co.jp/search/result?from=%E6%A9%8B%E6%9C%AC%28%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%29&to=%E3%81%AA%E3%82%93%E3%81%B0%28%E5%8D%97%E6%B5%B7%E7%B7%9A%29&y=2026&m=11&d=18&hh=16&m1=2&m2=0&type=1&expkind=1&ws=3&s=0&al=1&shin=0&ex=0&hb=0&lb=0&sr=0",
-          "sourceLabel": "橋本→難波の乗換検索（11/18）"
+          "sourceURL": "https://transit.yahoo.co.jp/search/result?from=%E4%B8%89%E6%97%A5%E5%B8%82%E7%94%BA&to=%E3%81%AA%E3%82%93%E3%81%B0%28%E5%8D%97%E6%B5%B7%E7%B7%9A%29&y=2026&m=11&d=18&hh=16&m1=2&m2=0&type=1",
+          "sourceLabel": "三日市町→難波の乗換検索（11/18）"
         },
         {
           "id": "namba-dinner",
@@ -1735,9 +1698,8 @@
       "address": "〒648-0211 和歌山県伊都郡高野町高野山550"
     },
     {
-      "name": "タイムズカー 橋本駅南",
-      "phone": "0736-32-7117",
-      "address": "〒648-0064 和歌山県橋本市橋本2丁目5（力うどん）"
+      "name": "タイムズカー 三日市町駅南",
+      "address": "〒586-0048 大阪府河内長野市三日市町117−1"
     }
   ]
 }

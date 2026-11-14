@@ -9,7 +9,7 @@ async function main() {
   assert.equal(trip.days.at(-1).date,'2026-11-18');
   const secondDay=trip.days.find(day=>day.date==='2026-11-16');
   assert.deepEqual(secondDay.events.filter(event=>['kurama','kifune'].includes(event.id)).map(event=>event.id),['kurama','kifune']);
-  assert.equal(secondDay.events.find(event=>event.id==='car-pickup').time,'17:30');
+  assert.equal(secondDay.events.find(event=>event.id==='car-pickup').time,'17:00');
   assert.equal(trip.days.find(day=>day.date==='2026-11-18').events[0].id,'breakfast-konono');
   assert.equal(new Set(trip.days.flatMap(day=>day.events.map(event=>event.id))).size,trip.days.flatMap(day=>day.events).length);
   const nodes = {}, storage = new Map(), windowListeners = {};
@@ -66,7 +66,7 @@ async function main() {
     assert.match(element('#day-content').innerHTML,new RegExp(day.title.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
   }
   element('#days').click({target:{closest:()=>({dataset:{date:'2026-11-16'}})}});
-  assert.equal((element('#day-content').innerHTML.match(/class="departure-option route-option"/g)||[]).length,6);
+  assert.equal((element('#day-content').innerHTML.match(/class="departure-option route-option"/g)||[]).length,5);
   for(const option of secondDay.events.find(e=>e.id==='nara-move').routeOptions){
     assert.equal(option.legs.length,3);
     const toMinutes=s=>s.split(':').reduce((h,m)=>Number(h)*60+Number(m));
@@ -92,7 +92,7 @@ async function main() {
   const cache={addAll:async urls=>{for(const url of urls){const file=new URL(url).pathname.replace('/kyoto-shiori/','')||'index.html';assert.ok(fs.existsSync(file),file);cacheEntries.set(url,{file});}},match:async req=>cacheEntries.get(typeof req==='string'?req:req.url),put:async(req,response)=>cacheEntries.set(typeof req==='string'?req:req.url,response)};
   const swContext=vm.createContext({URL,Response,AbortController,setTimeout,clearTimeout,
     self:{registration:{scope:'https://example.test/kyoto-shiori/'},location:{origin:'https://example.test'},clients:{claim:async()=>{}},skipWaiting:async()=>{},addEventListener:(type,fn)=>handlers[type]=fn},
-    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v160'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
+    caches:{open:async()=>cache,keys:async()=>['autumn-shiori-shell-v161'],delete:async()=>true},fetch:async()=>{throw new Error('offline');}
   });
   vm.runInContext(fs.readFileSync('sw.js','utf8'),swContext);
   let pending;handlers.install({waitUntil:p=>pending=p});await pending;
